@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gabbys-dollhouse-the-movie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700;800&family=Rubik:wght@900&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; font-family: 'Arial', sans-serif; }
+        html, body { overflow: hidden; width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { position: relative; }
+        
+        .main-nav { transition: all 0.3s ease; }
+        .main-nav:hover { background-color: #052c6e !important; }
+        .main-nav.scrolled { height: 82px; background-color: #052c6e; }
+        .main-nav.scrolled .nav-logo { height: 55px; width: 94px; }
+        .nav-logo { transition: all 0.3s ease; }
+        .social-links a { transition: transform 0.2s ease; }
+        .social-links a:hover { transform: scale(1.1); }
+        .social-links img { filter: brightness(0) invert(1); }
+        .nav-link { transition: opacity 0.2s ease; }
+        .nav-link:hover { opacity: 0.8; }
+        .search-icon { transition: transform 0.2s ease; }
+        .search-icon:hover { transform: scale(1.1); }
+        .search-icon:hover .material-icons { opacity: 0.8; }
+        .hamburger-menu { transition: transform 0.2s ease; }
+        .hamburger-menu:hover { transform: scale(1.05); }
+        .hamburger-menu span { transition: all 0.3s ease; }
+        .hamburger-menu:hover span { background-color: rgba(255, 255, 255, 0.8); }
+        
+        .container { scroll-snap-type: y mandatory; }
+        section { scroll-snap-align: start; }
+        
+        .dot { transition: all 0.3s; }
+        .dot.active { background-color: rgb(235, 187, 31); transform: scale(2.5); }
+        .dot-item:hover .dot { transform: scale(1.2); }
+        .dot-label { transition: opacity 0.3s; }
+        .dot-item:hover .dot-label { opacity: 1; }
+        
+        /* Button hover effect with left-to-right fill */
+        .action-button {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: color 0.3s ease;
+        }
+        .action-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+        .action-button:hover::before {
+            transform: scaleX(1);
+        }
+        .action-button:hover {
+            color: #052c6e;
+        }
+        
+        /* Watch at home section styling */
+        .watch-at-home-title {
+            font-family: 'Rubik', 'Fredoka', sans-serif;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+        }
+        
+        .line-divider {
+            border: none;
+            border-top: 2px solid #e740ba;
+            margin: 0;
+        }
+    </style>
+</head>
+<body class="overflow-hidden w-full h-full m-0 p-0 relative">
+    <!-- Circle indicators on left -->
+    <div class="nav-dots fixed left-[30px] top-1/2 -translate-y-1/2 z-[100] p-[7.5px]">
+        <div class="dot-item flex items-center my-[15px] cursor-pointer relative">
+            <div class="dot active w-[5px] h-[5px] rounded-full bg-white/50 flex-shrink-0"></div>
+            <span class="dot-label absolute left-[25px] whitespace-nowrap opacity-0 bg-[#222] text-white py-[6px] px-3 text-[11px] font-bold tracking-[0.05em] uppercase">INTRO</span>
+        </div>
+        <div class="dot-item flex items-center my-[15px] cursor-pointer relative">
+            <div class="dot w-[5px] h-[5px] rounded-full bg-white/50 flex-shrink-0"></div>
+            <span class="dot-label absolute left-[25px] whitespace-nowrap opacity-0 bg-[#222] text-white py-[6px] px-3 text-[11px] font-bold tracking-[0.05em] uppercase">WATCH AT HOME</span>
+        </div>
+        <div class="dot-item flex items-center my-[15px] cursor-pointer relative">
+            <div class="dot w-[5px] h-[5px] rounded-full bg-white/50 flex-shrink-0"></div>
+            <span class="dot-label absolute left-[25px] whitespace-nowrap opacity-0 bg-[#222] text-white py-[6px] px-3 text-[11px] font-bold tracking-[0.05em] uppercase">ABOUT</span>
+        </div>
+        <div class="dot-item flex items-center my-[15px] cursor-pointer relative">
+            <div class="dot w-[5px] h-[5px] rounded-full bg-white/50 flex-shrink-0"></div>
+            <span class="dot-label absolute left-[25px] whitespace-nowrap opacity-0 bg-[#222] text-white py-[6px] px-3 text-[11px] font-bold tracking-[0.05em] uppercase">VIDEOS</span>
+        </div>
+        <div class="dot-item flex items-center my-[15px] cursor-pointer relative">
+            <div class="dot w-[5px] h-[5px] rounded-full bg-white/50 flex-shrink-0"></div>
+            <span class="dot-label absolute left-[25px] whitespace-nowrap opacity-0 bg-[#222] text-white py-[6px] px-3 text-[11px] font-bold tracking-[0.05em] uppercase">GALLERY</span>
+        </div>
+    </div>
+    <!-- end Circle indicators on left -->
+    
+    <!-- Navigation Bar -->
+    <nav class="main-nav fixed top-0 left-0 right-0 w-full h-[72px] z-[1000] bg-transparent m-0 p-0" id="mainNav">
+        <div class="nav-container flex items-center justify-between w-full h-full m-0 px-[60px] max-w-none">
+            <!-- Left: Logo -->
+            <div class="nav-left flex-none mr-auto">
+                <a href="#" class="logo-link flex items-center p-0">
+                    <img src="./img/dreamworks-animation-logo-black-and-white.png" alt="DreamWorks" class="nav-logo h-[61px] w-[104px]">
+                </a>
+            </div>
+
+            <!-- Center: Social Media Icons -->
+            <div class="nav-center flex-1 flex justify-end items-center mx-auto">
+                <ul class="social-links flex list-none gap-[30px] m-0 ml-10 pr-10 items-center">
+                    <li class="flex items-center">
+                        <a href="https://x.com/DreamWorks" target="_blank" aria-label="Twitter" class="flex items-center justify-center w-[30px] h-[30px]">
+                            <img src="./img/icons8-x.svg" alt="Twitter" class="w-[30px] h-[30px] object-contain">
+                        </a>
+                    </li>
+                    <li class="flex items-center">
+                        <a href="https://www.facebook.com/DreamWorksAnimation" target="_blank" aria-label="Facebook" class="flex items-center justify-center w-[30px] h-[30px]">
+                            <img src="./img/icons8-facebook.svg" alt="Facebook" class="w-[30px] h-[30px] object-contain">
+                        </a>
+                    </li>
+                    <li class="flex items-center">
+                        <a href="https://www.youtube.com/user/DreamWorksTV" target="_blank" aria-label="YouTube" class="flex items-center justify-center w-[30px] h-[30px]">
+                            <img src="./img/icons8-youtube.svg" alt="YouTube" class="w-[30px] h-[30px] object-contain">
+                        </a>
+                    </li>
+                    <li class="flex items-center">
+                        <a href="https://www.instagram.com/dreamworks/" target="_blank" aria-label="Instagram" class="flex items-center justify-center w-[30px] h-[30px]">
+                            <img src="./img/icons8-instagram-64 .png" alt="Instagram" class="w-[30px] h-[30px] object-contain">
+                        </a>
+                    </li>
+                    <li class="flex items-center">
+                        <a href="https://www.tiktok.com/@dreamworks" target="_blank" aria-label="TikTok" class="flex items-center justify-center w-[30px] h-[30px]">
+                            <img src="./img/icons8-tiktok.svg" alt="TikTok" class="w-[30px] h-[30px] object-contain">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right: Menu Items -->
+            <div class="nav-right flex-none ml-auto">
+                <ul class="nav-menu flex list-none items-center gap-0 m-0 p-0 h-[72px]">
+                    <li class="flex items-center h-[72px]">
+                        <a href="#" class="search-icon text-white no-underline cursor-pointer p-0 flex items-center justify-center w-[74px] h-[72px]" aria-label="Search">
+                            <span class="material-icons text-2xl text-white">search</span>
+                        </a>
+                    </li>
+                    <li class="flex items-center h-[72px]">
+                        <a href="#" class="nav-link text-white no-underline text-[13px] font-bold tracking-[0.5px] py-5 px-[30px] flex items-center justify-center h-[72px] whitespace-nowrap">MOVIES</a>
+                    </li>
+                    <li class="flex items-center h-[72px]">
+                        <a href="#" class="nav-link text-white no-underline text-[13px] font-bold tracking-[0.5px] py-5 px-[30px] flex items-center justify-center h-[72px] whitespace-nowrap">TV</a>
+                    </li>
+                    <li class="flex items-center h-[72px]">
+                        <a href="#" class="nav-link text-white no-underline text-[13px] font-bold tracking-[0.5px] py-5 px-[30px] flex items-center justify-center h-[72px] whitespace-nowrap">EXPLORE</a>
+                    </li>
+                    <li class="flex items-center h-[72px]">
+                        <button class="hamburger-menu bg-transparent border-none cursor-pointer p-0 px-[30px] w-auto h-[72px] flex flex-col justify-center items-center gap-1" aria-label="Menu">
+                            <span class="block w-5 h-[2px] bg-white"></span>
+                            <span class="block w-5 h-[2px] bg-white"></span>
+                            <span class="block w-5 h-[2px] bg-white"></span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- end nav -->
+
+    <div class="container absolute top-0 left-0 w-full h-full overflow-x-hidden overflow-y-scroll m-0 p-0 max-w-none">
+
+        <section class="introduction relative w-full h-screen flex justify-center items-center m-0 p-0 bg-[#9dc06b] overflow-hidden">
+            <div class="background-video absolute top-0 left-0 w-full h-full overflow-hidden z-[1] m-0 p-0">
+                <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover m-0 p-0">
+                    <source src="./mp4/gabbys-dollhouse-the-movie-header-video.mp4" type="video/mp4">
+                </video>        
+
+                <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+
+            </div>
+            <div class="centered-content home-entry relative z-10 flex flex-col items-center justify-center w-full h-full m-0 p-0">
+                <figure class="m-0 p-0 flex justify-center items-center">
+                    <img id="logo-img" src="./img/gabbys-dollhouse-the-movie-logo-lockup-physical-now.png" alt="Gabby's Dollhouse: The Movie available now on Digital, Blu-ray™ & DVD" class="w-[400px] h-auto block mx-auto">
+                </figure>
+                <footer class="flex w-[400px] h-auto justify-center items-center gap-5 mb-[200px] p-0">
+                    <button class="action-button text-white border border-white bg-transparent py-[10px] px-[15px] mt-5 w-[180px] h-auto text-[12px] font-bold cursor-pointer uppercase flex items-center justify-center">Watch Trailer</button>
+                    <button class="action-button text-white border border-white bg-transparent py-[10px] px-[15px] mt-5 w-[180px] h-auto text-[12px] font-bold cursor-pointer uppercase flex items-center justify-center">Watch at home</button>
+                </footer>
+                <div class="home-ent-content absolute bottom-0 left-0 right-0 w-full flex flex-col justify-end items-center">
+                    <div class="relative w-full max-w-[375px] flex justify-center">
+                        <img class="w-full h-auto z-0" src="./img/gabbys-dollhouse-the-movie-hero-products-background.png" alt="Gabby's Dollhouse: The Movie products background">
+                        <a href="#" class="blu-ray-dvd absolute bottom-[10px] left-1/2 -translate-x-1/2 z-10">
+                            <div class="w-[150px] h-auto">
+                                <img class="w-full h-auto hover:scale-110 transition-all duration-300" src="./img/gabbys-dollhouse-the-movie-product-bluray-dvd.png" alt="Gabby's Dollhouse: The Movie Blu-ray™ & DVD">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+
+        <section class="watch-at-home relative w-full h-screen flex flex-col justify-center items-center m-0 p-0 bg-[#fabde7] overflow-hidden">
+            <img src="./img/gabbys-dollhouse-the-movie-logo-lockup-retailers-physical-now3.png" alt="Gabby's Dollhouse: The Movie available now on Digital, Blu-ray™ & DVD" class="max-w-[451px] h-auto">
+            <footer class="flex flex-col items-center justify-center gap-5 w-full max-w-[900px] p-[20px]">
+                <div class="title flex items-center justify-center gap-5 w-full">
+                    <hr class="line-divider flex-1">
+                    <h3 class="watch-at-home-title text-center text-[#e740ba] text-[28px] font-bold tracking-[0.5px] uppercase whitespace-nowrap">WATCH AT HOME ON THESE RETAILERS</h3>
+                    <hr class="line-divider flex-1">
+                </div>
+                <ul class="retailers-list flex flex-wrap items-center justify-center gap-5 w-[900px]">
+                    <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                        <figure class="flex items-center justify-center w-[169px] h-[46px]">
+                            <img src="./img/Vudu_FandangoAtHomelogo.png" alt="Vudu" class="w-auto h-[100%]">
+                        </figure>
+                    </li>
+                    <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                        <figure class="flex items-center justify-center w-[169px] h-[46px]">
+                            <img src="./img/xfinity-logo-may2022.png" alt="Xfinity" class="w-auto h-[100%]">
+                        </figure>
+                    </li>
+                    <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                        <figure class="flex items-center justify-center w-[169px] h-[46px]">
+                            <img src="./img/prime-video-logo.png" alt="Prime Video" class="w-auto h-[100%]">
+                        </figure>
+                    </li>
+                    <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                        <figure class="flex items-center justify-center w-[169px] h-[46px]">
+                            <img src="./img/Apple_TV_logo2.png" alt="Apple TV" class="w-auto h-[100%]">
+                        </figure>
+                    </li>
+                    <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                        <figure class="flex items-center justify-center w-[169px] h-[46px]">
+                            <img src="./img/youtube_buyIton.png" alt="YouTube" class="w-auto h-[100%]">
+                        </figure>
+                    </li>
+                        <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                        <figure class="flex items-center justify-center w-[169px] h-[46px]">
+                            <img src="./img/verizon-logopng.png" alt="Verizon" class="w-auto h-[100%]">
+                        </figure>
+                    </li>
+                    <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                        <figure class="flex items-center justify-center w-[169px] h-[46px]">
+                            <img src="./img/dish-logo-oct2025.png" alt="Dish" class="w-auto h-[100%]">
+                        </figure>
+                    </li>
+                    <li class="flex items-center justify-center w-[207px] h-[60px]">
+                        <!-- leave free space -->
+                    </li>
+                </ul>
+                <div class="title flex items-center justify-center gap-5 w-full mt-5">
+                    <hr class="line-divider flex-1">
+                    <h3 class="watch-at-home-title text-center text-[#e740ba] text-[28px] font-bold tracking-[0.5px] uppercase whitespace-nowrap">Blu-ray™ & DVD</h3>
+                    <hr class="line-divider flex-1">
+                </div>
+                <ul class="retailers-list flex flex-wrap items-center justify-center gap-5 w-[900px]">
+                    <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                        <figure class="flex items-center justify-center w-[169px] h-[46px]">
+                            <img src="./img/amazon.png" alt="Amazon" class="w-auto h-[100%]">
+                        </figure>
+                    </li>
+                    <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                        <figure class="flex items-center justify-center w-[169px] h-[46px]">
+                            <img src="./img/target-v2-logo-he.png" alt="Target" class="w-auto h-[100%]">
+                        </figure>
+                    </li>
+                    <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                        <figure class="flex items-center justify-center w-[169px] h-[46px]">
+                            <img src="./img/walmart-v2-he-logo.png" alt="Walmart" class="w-auto h-[100%]">
+                        </figure>
+                    </li>
+                    <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                        <figure class="flex items-center justify-center w-[169px] h-[46px]">
+                            <img src="./img/gruv.png" alt="Gruv" class="w-auto h-[100%]">
+                        </figure>
+                    </li>
+
+
+            </footer>
+        </section>
+
+
+
+        <section class="about relative w-full h-screen flex justify-center items-center m-0 p-0 bg-[#5a72c8]">
+            <h1>About</h1>
+        </section>
+        <section class="videos relative w-full h-screen flex justify-center items-center m-0 p-0 bg-[#b431bdce]">
+            <h1>Videos</h1>
+        </section>
+        <section class="gallery relative w-full h-screen flex justify-center items-center m-0 p-0 bg-[#e8a735]">
+            <h1>Gallery</h1>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
