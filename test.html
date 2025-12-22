@@ -229,6 +229,30 @@
         .thumb-list::-webkit-scrollbar-thumb:hover {
             background: rgba(255, 255, 255, 0.8);
         }
+        
+        /* Gallery Navigation Buttons */
+        .gallery-nav-button {
+            transition: all 0.3s ease;
+            background-color: transparent;
+            border: none;
+        }
+        
+        .gallery-nav-button:hover svg {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        .gallery-nav-button:active svg {
+            transform: scale(0.95);
+        }
+        
+        .gallery-nav-button svg {
+            transition: all 0.3s ease;
+        }
+        
+        .slider-container {
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
     </style>
 </head>
 <body class="m-0 p-0">
@@ -257,7 +281,7 @@
     </div>
     
     <!-- Navigation Bar -->
-    <!-- <nav class="main-nav fixed top-0 left-0 right-0 w-full z-[1000] m-0 p-0" id="mainNav">
+    <nav class="main-nav fixed top-0 left-0 right-0 w-full z-[1000] m-0 p-0" id="mainNav">
         <div class="nav-container flex items-center justify-between w-full h-full px-[60px] m-0">
 
             <div class="nav-left flex-none mr-auto">
@@ -324,11 +348,11 @@
                 </ul>
             </div>
         </div>
-    </nav> -->
+    </nav>
 
     <div class="scroll-container fixed top-0 left-0 w-full h-full overflow-y-scroll m-0 p-0" id="mainContainer">
 
-        <!-- <section class="introduction relative w-full h-screen flex justify-center items-center bg-[#9dc06b] m-0 p-0">
+        <section class="introduction relative w-full h-screen flex justify-center items-center bg-[#9dc06b] m-0 p-0">
             <div class="background-video absolute top-0 left-0 w-full h-full overflow-hidden z-[1] m-0 p-0">
                 <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover m-0 p-0">
                     <source src="./mp4/gabbys-dollhouse-the-movie-header-video.mp4" type="video/mp4">
@@ -355,9 +379,9 @@
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
 
-        <!-- <section class="watch-at-home relative w-full h-screen flex flex-col justify-start items-center pt-[70px] bg-[#fabde7] m-0 p-0">
+        <section class="watch-at-home relative w-full h-screen flex flex-col justify-start items-center pt-[70px] bg-[#fabde7] m-0 p-0">
             <img src="./img/gabbys-dollhouse-the-movie-logo-lockup-retailers-physical-now3.png" alt="Gabby's Dollhouse: The Movie available now on Digital, Blu-ray™ & DVD" class="max-w-[451px] h-auto mb-8">
             <div class="flex flex-col items-center justify-start gap-5 w-full max-w-[900px] mx-auto">
                 <div class="title flex items-center justify-center gap-5 w-full px-5">
@@ -433,9 +457,9 @@
                     </li>
                 </ul>
             </div>
-        </section> -->
+        </section>
 
-        <!-- <section class="about relative w-full flex flex-row m-0 p-0">
+        <section class="about relative w-full flex flex-row m-0 p-0">
 
             <div class="left-content w-1/2 bg-gradient-to-b from-[#f72399] to-[#f02ea6] flex items-center justify-end ">
                 <div class="detail-closed w-[720px] text-[15px] leading-normal text-white font-['TT_Norms_W01_Regular',_Helvetica,_sans-serif] py-[40px] pr-[20px] pb-[60px] pl-[20px]">
@@ -537,9 +561,9 @@
             <div class="right-content w-1/2">
                 <img src="./img/gabbys-dollhouse-the-movie-about-desktop3.jpg" alt="Gabby's Dollhouse: The Movie about" class="w-full h-full object-cover">
             </div>
-        </section> -->
+        </section>
         
-        <!-- <section class="videos relative w-full h-screen m-0 p-0" style="background-image: url('./img/videos-background.png'); background-size: cover; background-position: center;">
+        <section class="videos relative w-full h-screen m-0 p-0" style="background-image: url('./img/videos-background.png'); background-size: cover; background-position: center;">
 
             <div class="absolute inset-0 w-full h-full bg-black opacity-80"></div>
             
@@ -596,11 +620,88 @@
                     </div>
                 </div>
             </div>
-        </section> -->
-
-        <section class="gallery relative w-full h-screen flex justify-center items-center bg-[#e8a735] m-0 p-0">
-            <h1>Gallery</h1>
         </section>
+
+        <section class="gallery-section relative w-full h-screen overflow-hidden">
+        
+            <!-- Slider Viewport -->
+            <div class="relative w-full h-full overflow-hidden">
+                <!-- Slider Container with all images in a row -->
+                <div class="gallery-slider-container absolute top-0 left-0 h-full flex" id="gallerySlider">
+                    
+                    <!-- Clone of SLIDE 5 (for infinite loop - shows on LEFT at start) -->
+                    <div class="gallery-slide flex-shrink-0 w-screen h-screen" data-clone="true">
+                        <img src="./img/gabbys-dollhouse-the-movie-gallery-5.jpg" alt="Gallery Image 5 Clone" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <!-- SLIDE 1 -->
+                    <div class="gallery-slide flex-shrink-0 w-screen h-screen" data-index="0">
+                        <img src="./img/gabbys-dollhouse-the-movie-gallery-1.jpg" alt="Gallery Image 1" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <!-- SLIDE 2 -->
+                    <div class="gallery-slide flex-shrink-0 w-screen h-screen" data-index="1">
+                        <img src="./img/gabbys-dollhouse-the-movie-gallery-2b.jpg" alt="Gallery Image 2" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <!-- SLIDE 3 -->
+                    <div class="gallery-slide flex-shrink-0 w-screen h-screen" data-index="2">
+                        <img src="./img/gabbys-dollhouse-the-movie-gallery-3.jpg" alt="Gallery Image 3" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <!-- SLIDE 4 -->
+                    <div class="gallery-slide flex-shrink-0 w-screen h-screen" data-index="3">
+                        <img src="./img/gabbys-dollhouse-the-movie-gallery-4.jpg" alt="Gallery Image 4" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <!-- SLIDE 5 -->
+                    <div class="gallery-slide flex-shrink-0 w-screen h-screen" data-index="4">
+                        <img src="./img/gabbys-dollhouse-the-movie-gallery-5.jpg" alt="Gallery Image 5" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <!-- Clone of SLIDE 1 (for infinite loop - shows on RIGHT at end) -->
+                    <div class="gallery-slide flex-shrink-0 w-screen h-screen" data-clone="true">
+                        <img src="./img/gabbys-dollhouse-the-movie-gallery-1.jpg" alt="Gallery Image 1 Clone" class="w-full h-full object-cover">
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Gallery Title - Top Left -->
+            <h2 class="absolute top-[20px] left-20 text-[#ffeea6] text-[25px] font-['Paytone_One'] uppercase z-10 m-0 pointer-events-none" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
+                Gallery
+            </h2>
+            
+            <!-- Navigation Arrows - Bottom Right Corner -->
+            <!-- Previous Button (Left Arrow) -->
+            <button id="prevButton" class="gallery-nav-button absolute right-[212px] bottom-14 z-20 w-9 h-9 flex items-center justify-center transition-all duration-300 cursor-pointer" type="button" aria-label="Previous">
+                <svg class="w-9 h-9 opacity-80" viewBox="0 0 100 100" fill="white">
+                    <path d="M72 100 l5.26-5.26 l-44-44.65 l44-44.65 l-5.26-5.26 l-49.335 49.92 z"></path>
+                </svg>
+            </button>
+            
+            <!-- Next Button (Right Arrow) -->
+            <button id="nextButton" class="gallery-nav-button absolute right-[156px] bottom-14 z-20 w-9 h-9 flex items-center justify-center transition-all duration-300 cursor-pointer" type="button" aria-label="Next">
+                <svg class="w-9 h-9 opacity-80" viewBox="0 0 100 100" fill="white">
+                    <path d="M28 100 l-5.26-5.26 l44-44.65 l-44-44.65 l5.26-5.26 l49.335 49.92 z"></path>
+                </svg>
+            </button>
+        </section>
+
+
+        <section class="gallery relative w-full h-screen flex justify-center items-center bg-[#e8a3c6] m-0 p-0">
+            <h1>asd</h1>
+        </section>
+        <section class="gallery relative w-full h-screen flex justify-center items-center bg-[#e8a3c6] m-0 p-0">
+            <h1>asd</h1>
+        </section>
+        <section class="gallery relative w-full h-screen flex justify-center items-center bg-[#e8a3c6] m-0 p-0">
+            <h1>asd</h1>
+        </section>
+
+
+
+
     </div>
 
     <div id="video-modal" class="fixed inset-0 bg-black bg-opacity-95 z-[9999] hidden items-center justify-center">
@@ -737,12 +838,166 @@
             }
         });
 
-        // ESC key to close
+        // Gallery Slider
+        let currentSlide = 1; // Start at index 1 (after the clone)
+        const gallerySlider = document.getElementById('gallerySlider');
+        const gallerySlides = document.querySelectorAll('.gallery-slide');
+        const totalSlides = 5; // Only count real slides, not clones
+        const gallerySection = document.querySelector('.gallery-section');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+
+        console.log('Gallery Slider initialized:', {
+            gallerySlider: gallerySlider,
+            gallerySlides: gallerySlides.length,
+            gallerySection: gallerySection,
+            prevButton: prevButton,
+            nextButton: nextButton
+        });
+
+        function updateGallerySlider(noTransition = false) {
+            if (!gallerySlider) {
+                console.error('Gallery slider element not found!');
+                return;
+            }
+            
+            console.log('Updating slider to slide:', currentSlide);
+            
+            if (noTransition) {
+                gallerySlider.style.transition = 'none';
+            } else {
+                gallerySlider.style.transition = 'transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
+            }
+            
+            // Each slide is full screen width
+            const slideWidth = window.innerWidth;
+            
+            // Calculate offset: how many pixels to move left
+            const offset = currentSlide * slideWidth;
+            
+            console.log('Applying transform:', `translateX(-${offset}px)`);
+            gallerySlider.style.transform = `translateX(-${offset}px)`;
+            
+            // Force reflow to apply no-transition immediately
+            if (noTransition) {
+                gallerySlider.offsetHeight;
+            }
+        }
+
+        function goToPrevSlide() {
+            console.log('Going to previous slide, current:', currentSlide);
+            currentSlide--;
+            updateGallerySlider();
+            
+            // If we're at the first clone (index 0), jump to the real last slide (index 5)
+            if (currentSlide === 0) {
+                setTimeout(() => {
+                    currentSlide = 5;
+                    updateGallerySlider(true);
+                }, 800); // Match animation duration
+            }
+        }
+
+        function goToNextSlide() {
+            console.log('Going to next slide, current:', currentSlide);
+            currentSlide++;
+            updateGallerySlider();
+            
+            // If we're at the last clone (index 6), jump to the real first slide (index 1)
+            if (currentSlide === 6) {
+                setTimeout(() => {
+                    currentSlide = 1;
+                    updateGallerySlider(true);
+                }, 800); // Match animation duration
+            }
+        }
+
+        // Check if gallery section is in viewport
+        function isGalleryVisible() {
+            if (!gallerySection) return false;
+            const rect = gallerySection.getBoundingClientRect();
+            
+            // Check if gallery section is taking up most of the viewport
+            // More strict check to ensure gallery is the active section
+            const isVisible = rect.top <= 100 && rect.bottom >= window.innerHeight - 100;
+            console.log('Gallery visibility check:', {
+                top: rect.top,
+                bottom: rect.bottom,
+                windowHeight: window.innerHeight,
+                isVisible: isVisible
+            });
+            return isVisible;
+        }
+
+        // Click handlers for navigation buttons
+        if (prevButton) {
+            console.log('Prev button found, adding click listener');
+            prevButton.addEventListener('click', (e) => {
+                console.log('Prev button clicked!');
+                e.preventDefault();
+                e.stopPropagation();
+                goToPrevSlide();
+            });
+        } else {
+            console.error('Prev button not found!');
+        }
+
+        if (nextButton) {
+            console.log('Next button found, adding click listener');
+            nextButton.addEventListener('click', (e) => {
+                console.log('Next button clicked!');
+                e.preventDefault();
+                e.stopPropagation();
+                goToNextSlide();
+            });
+        } else {
+            console.error('Next button not found!');
+        }
+
+        // Combined keyboard handler for all keyboard events
         document.addEventListener('keydown', (e) => {
+            console.log('Key pressed:', e.key);
+            
+            // Handle ESC key for video modal
             if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
                 closeVideoModal();
+                return;
+            }
+            
+            // Handle arrow keys for gallery navigation
+            // Check if gallery is visible
+            const isVisible = isGalleryVisible();
+            console.log('Gallery visible for keyboard:', isVisible);
+            
+            if (isVisible) {
+                if (e.key === 'ArrowLeft') {
+                    console.log('Left arrow pressed, going to prev slide');
+                    e.preventDefault(); // Prevent page scroll
+                    e.stopPropagation(); // Stop event from bubbling
+                    goToPrevSlide();
+                } else if (e.key === 'ArrowRight') {
+                    console.log('Right arrow pressed, going to next slide');
+                    e.preventDefault(); // Prevent page scroll
+                    e.stopPropagation(); // Stop event from bubbling
+                    goToNextSlide();
+                }
             }
         });
+
+        // Initialize - center first real slide (index 1) on load
+        window.addEventListener('load', () => {
+            updateGallerySlider(true);
+        });
+        
+        // Recalculate on window resize
+        window.addEventListener('resize', () => {
+            updateGallerySlider(true);
+        });
+
+        // Initialize immediately
+        setTimeout(() => {
+            updateGallerySlider(true);
+        }, 100);
     </script>
 </body>
 </html>
