@@ -11,6 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700;800&family=Rubik:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&display=swap" rel="stylesheet">
     <style>
         * { 
             box-sizing: border-box; 
@@ -181,6 +189,37 @@
         
         .action-button:hover {
             color: #052c6e;
+        }
+        
+        /* Shop Buttons - Different hover effect */
+        .shop-button {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .shop-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ed34ac;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+        
+        .shop-button:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .shop-button:hover {
+            color: white;
+            border-color: #ed34ac;
         }
         
         /* Watch at Home Title */
@@ -462,7 +501,7 @@
         <section class="about relative w-full flex flex-row m-0 p-0">
 
             <div class="left-content w-1/2 bg-gradient-to-b from-[#f72399] to-[#f02ea6] flex items-center justify-end ">
-                <div class="detail-closed w-[720px] text-[15px] leading-normal text-white font-['TT_Norms_W01_Regular',_Helvetica,_sans-serif] py-[40px] pr-[20px] pb-[60px] pl-[20px]">
+                <div class="detail-closed w-[720px] text-[15px] leading-normal text-white font-['TT_Norms_W01_Regular',_Helvetica,_sans-serif] py-[40px] pr-[20px] pb-[60px] pl-[50px]">
                     <h2 class="font-['Futura'] text-[rgb(255,239,166)] text-[25px] font-bold leading-normal uppercase mb-[30px]">About</h2>
                     <div class="fold-up">
                         <p class="pr-[60px] mt-[20px]">DreamWorks Animation elevates its global smash streaming series into its first ever cinematic adventure with <em>Gabby's Dollhouse: The Movie.</em></p>
@@ -576,7 +615,7 @@
             
             <div class="overplay absolute inset-0 w-full h-full flex justify-center items-start z-20">
                 <div class="content w-[1440px] h-full flex">
-                    <div class="left-bar w-[300px] p-[10px] top-[30px] h-full relative flex flex-col">
+                    <div class="left-bar w-[320px] pl-[50px] pt-[10px] pb-[10px] top-[30px] h-full relative flex flex-col">
                         <h2 class="font-['Paytone_One'] text-[#FFEFA6] text-[28px] font-normal mb-6 uppercase flex-shrink-0">Videos</h2>
                         <div class="thumb-list flex-1 overflow-y-scroll">
                             <ul class="list-none m-0 p-0">
@@ -689,11 +728,116 @@
         </section>
 
 
-        <section class="gallery relative w-full h-screen flex justify-center items-center bg-[#e8a3c6] m-0 p-0">
-            <h1>asd</h1>
+        <section class="gallery relative w-full h-screen flex justify-center items-start bg-white m-0 p-0">
+            <div class="left-content w-1/2 flex items-start justify-end">
+                <div class="detail-closed w-[720px] text-[15px] leading-normal text-white font-['TT_Norms_W01_Regular',_Helvetica,_sans-serif] py-[15px] pr-[20px] pb-[60px] pl-[50px]">
+                    <div class="text pb-[20px]">
+                        <h2 class="text-[25px] font-['Paytone_One'] uppercase text-[#ed34ac] pb-[10px]">Shop</h2>
+                        <p class="text-[15px] font-['Quicksand'] leading-normal text-[#ed34ac]">Live out your favorite adventures from the movie with all new toys, books, apparel, and more - available now at your favorite retailer!</p>
+                    </div>
+                    <div class="three-box">
+                        <ul class="grid grid-cols-2 gap-x-[20px] gap-y-[30px] list-none p-0 w-[430px]">
+                            <li class="flex flex-col items-center justify-between w-[200px] h-[180px]">
+                                <img src="./img/gabbys-dollhouse-the-movie-shop-walmart2.png" alt="Walmart" class="w-[200px] h-[120px] object-contain">
+                                <button class="shop-button text-[#ed34ac] border-2 border-[#ed34ac] bg-transparent py-[13.5px] px-[15px] mt-5 w-[200px] text-[12px] font-['Poppins'] font-bold tracking-[0.05em] cursor-pointer uppercase flex items-center justify-center">Shop Now</button>
+                            </li>
+                            <li class="flex flex-col items-center justify-between w-[200px] h-[180px]">
+                                <img src="./img/gabbys-dollhouse-the-movie-shop-amazon2.png" alt="Amazon" class="w-[200px] h-[120px] object-contain">
+                                <button class="shop-button text-[#ed34ac] border-2 border-[#ed34ac] bg-transparent py-[13.5px] px-[15px] mt-5 w-[200px] text-[12px] font-['Poppins'] font-bold tracking-[0.05em] cursor-pointer uppercase flex items-center justify-center">Shop Now</button>
+                            </li>
+                            <li class="flex flex-col items-center justify-between w-[200px] h-[180px]">
+                                <img src="./img/gabbys-dollhouse-the-movie-shop-target2.png" alt="Target" class="w-[200px] h-[120px] object-contain">
+                                <button class="shop-button text-[#ed34ac] border-2 border-[#ed34ac] bg-transparent py-[13.5px] px-[15px] w-[200px] text-[12px] font-['Poppins'] font-bold tracking-[0.05em] cursor-pointer uppercase flex items-center justify-center">Shop Now</button>
+                            </li>
+                            <li class="flex flex-col items-center justify-between w-[200px] h-[180px]">
+                                
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content w-1/2 h-full">
+                <img src="./img/gabbys-dollhouse-the-movie-shop-desktop.jpg" alt="Gabby's Dollhouse: The Movie about" class="w-full h-full object-cover">
+            </div>
         </section>
-        <section class="gallery relative w-full h-screen flex justify-center items-center bg-[#e8a3c6] m-0 p-0">
-            <h1>asd</h1>
+
+
+        <section class="gallery relative w-full h-screen flex justify-center items-start bg-white m-0 p-0">
+            <div class="left-content w-1/2 h-full">
+                <img src="./img/gabbys-dollhouse-the-movie-pretty-glitter-kitty-litter-desktop.jpg" alt="Gabby's Dollhouse: The Movie about" class="w-full h-full object-cover">
+            </div>
+            <div class="right-content w-1/2 flex items-start justify-end">
+                <div class="detail-closed w-[720px] text-[15px] leading-normal text-white font-['TT_Norms_W01_Regular',_Helvetica,_sans-serif] py-[15px] pb-[60px]">
+                    <div class="text pb-[20px]">
+                        <h2 class="text-[28px] font-['Paytone_One'] uppercase text-[#a02655] pb-[10px] tracking-[0.05em]">Pretty Glitter Kitty Litter</h2>
+                    </div>
+                    <div class="image-container grid grid-cols-2 w-[655px] h-auto gap-x-[25px] mb-[20px]">
+                        <div class="large-image w-full">
+                            <img src="./img/gabbys-dollhouse-the-movie-pretty-glitter-kitty-litter-thumbnail1.png" alt="Pretty Glitter Kitty Litter" class="w-full h-full object-cover">
+                        </div>
+                        <div class="small-img grid grid-cols-2 w-full gap-[25px] ">
+                            <img src="./img/gabbys-dollhouse-the-movie-pretty-glitter-kitty-litter-thumbnail2.png" alt="Pretty Glitter Kitty Litter">
+                            <img src="./img/gabbys-dollhouse-the-movie-pretty-glitter-kitty-litter-thumbnail3.png" alt="Pretty Glitter Kitty Litter">
+                            <img src="./img/gabbys-dollhouse-the-movie-pretty-glitter-kitty-litter-thumbnail4.png" alt="Pretty Glitter Kitty Litter">
+                            <img src="./img/gabbys-dollhouse-the-movie-pretty-glitter-kitty-litter-thumbnail5.png" alt="Pretty Glitter Kitty Litter">
+                        </div>
+                    </div>
+                    <div class="bottom-container flex items-start justify-between w-[655px] h-auto gap-[30px]">
+                        <div class="right-content w-1/2">
+                            <div class="price flex items-start gap-3 font-['Outfit'] font-thin pb-[3px]">
+                                <div class="new-price flex items-start">
+                                    <span class="text-[#9F2655] text-[24px] font-bold leading-none pt-[8px]">$</span>
+                                    <span class="text-[#9F2655] text-[58px] font-bold leading-none">26</span>
+                                    <span class="text-[#9F2655] text-[28px] font-bold leading-none pt-[5px]">.99</span>
+                                </div>
+                                <div class="old-price relative flex items-start">
+                                    <span class="text-[#04acaa] text-[24px] font-bold leading-none pt-[8px]">$</span>
+                                    <span class="text-[#04acaa] text-[58px] font-bold leading-none">27</span>
+                                    <span class="text-[#04acaa] text-[28px] font-bold leading-none pt-[5px]">.00</span>
+                                    <span class="absolute top-1/2 left-0 w-full h-[5px] bg-[#04acaa] transform -rotate-0"></span>
+                                </div>
+                            </div>
+                            <div class="shipping-text font-['Outfit'] font-thin text-[#04acaa] tracking-[0.05em]">
+                                <p>
+                                    +$9.26 Shipping & Handling
+                                </p>
+                            </div>
+                            <button class="font-['Paytone_One'] text-[20px] font-bold leading-none text-[#9F2655] uppercase border-2 border-[#9F2655] w-[180px] h-[52px] px-[30px] py-[13px] my-[20px] cursor-not-allowed tracking-[0.05em]">Sold Out</button>
+                            <div class="review-star flex gap-2 items-center h-[29px] mb-[17px]">
+                                <p class="font-['Roboto'] font-thin text-[#9F2655] text-[19px] leading-none">5.0</p>
+                                <div class="star flex">
+                                    <img src="./img/star.png" alt="Star">
+                                    <img src="./img/star.png" alt="Star">
+                                    <img src="./img/star.png" alt="Star">
+                                    <img src="./img/star.png" alt="Star">
+                                    <img src="./img/star.png" alt="Star">
+                                </div>
+                            </div>
+                            <div class="review-text">
+                                <p class="font-['Nunito'] text-[#9F2655] text-[15px] leading-[22px] font-black">"<span>💩</span> Everything turned to sparkles! The smell is 100% pretty."</p>
+                            </div>
+                        </div>
+                        <div class="left-content w-1/2">
+                            <h2 class="font-['Montserrat'] text-[#9F2655] text-[16px] font-thin leading-none uppercase mb-[3px] tracking-[0.05em]">It's The Littler That Glitters!</h2>
+                            <p class="font-['Source_Sans_Pro'] text-[#9F2655] text-[15px] leading-[22px] font-normal tracking-[0.05em] mb-[10px]">Does a messy litter give you the jitters? This isn't just for people with cats. You can put it in decorative bowls, fill a piñata with it, hide your jewelry in it. You can also use this on top of your popcorn... just kidding... don't eat it. WARNING: not edible.</p>
+                            <blockquote class="font-['Montserrat'] text-[#9F2655] text-[14px] leading-[18px] font-thin tracking-[0.05em] mb-[13px]">"I just can't get enough of this litter!" <br><span class="inline-block mt-[5px]">- Peter Spielberg</span></blockquote>
+                            <p class="font-['Raleway'] text-[#9F2655] text-[14px] leading-[18px] font-extralight tracking-[0.05em] mb-[13px] uppercase">30-Day Money Back Guarantee</p>
+                            <div class="as-seen-on flex flex-col items-center mb-[13px] h-[94px]">
+                                <p class="font-['Raleway'] text-[#9F2655] text-[14px] font-extralight tracking-[0.05em]">As seen on</p>
+                                <div class="as-seen-on-link flex items-center gap-[10px]">
+                                    <a href="https://www.youtube.com/watch?v=iqyvMtdWRpU" target="_blank" aria-label="YouTube" class="flex items-center justify-center w-[67px] h-[67px]">
+                                        <img src="./img/youtube-color-icon.png" alt="youtube">
+                                    </a>
+                                    <a href="https://www.tiktok.com/@dreamworks/video/7548892957286337806" target="_blank" aria-label="TikTok" class="flex items-center justify-center w-[67px] h-[67px]">
+                                        <img src="./img/tiktok-square-icon.png" alt="tiktok">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </section>
         <section class="gallery relative w-full h-screen flex justify-center items-center bg-[#e8a3c6] m-0 p-0">
             <h1>asd</h1>
