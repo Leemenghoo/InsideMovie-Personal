@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700;800&family=Rubik:wght@900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700;800&family=Rubik:wght@900&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@800;900&display=swap" rel="stylesheet">
@@ -21,10 +24,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="footer.css">
     <style>
-        * { 
-            box-sizing: border-box; 
+        * {
+            box-sizing: border-box;
         }
-        
+
         html {
             overflow: hidden;
             width: 100%;
@@ -32,136 +35,136 @@
             margin: 0;
             padding: 0;
         }
-        
-        body { 
-            overflow: hidden; 
+
+        body {
+            overflow: hidden;
             overflow-x: hidden;
             width: 100%;
             height: 100%;
-            margin: 0; 
+            margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
         }
-        
+
         /* Hide scrollbar but keep functionality */
         .scroll-container::-webkit-scrollbar {
             display: none;
         }
-        
+
         .scroll-container {
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-        
+
         /* Navigation Bar */
-        .main-nav { 
+        .main-nav {
             transition: all 0.3s ease;
             height: 82px;
             background-color: transparent;
         }
-        
-        .main-nav:hover { 
-            background-color: #052c6e !important; 
+
+        .main-nav:hover {
+            background-color: #052c6e !important;
         }
-        
+
         /* Nav slides up, only showing small part */
-        .main-nav.slide-up { 
+        .main-nav.slide-up {
             transform: translateY(-68px);
             background-color: #052c6e;
         }
-        
+
         /* On hover, slide back down */
         .main-nav.slide-up:hover {
             transform: translateY(0);
         }
-        
-        .nav-logo { 
+
+        .nav-logo {
             transition: all 0.3s ease;
         }
-        
+
         /* Social Links */
-        .social-links a { 
-            transition: transform 0.2s ease; 
+        .social-links a {
+            transition: transform 0.2s ease;
         }
-        
-        .social-links a:hover { 
-            transform: scale(1.1); 
+
+        .social-links a:hover {
+            transform: scale(1.1);
         }
-        
-        .social-links img { 
-            filter: brightness(0) invert(1); 
+
+        .social-links img {
+            filter: brightness(0) invert(1);
         }
-        
+
         /* Nav Links */
-        .nav-link { 
-            transition: opacity 0.2s ease; 
+        .nav-link {
+            transition: opacity 0.2s ease;
         }
-        
-        .nav-link:hover { 
-            opacity: 0.8; 
+
+        .nav-link:hover {
+            opacity: 0.8;
         }
-        
+
         /* Search Icon */
-        .search-icon { 
-            transition: transform 0.2s ease; 
+        .search-icon {
+            transition: transform 0.2s ease;
         }
-        
-        .search-icon:hover { 
-            transform: scale(1.1); 
+
+        .search-icon:hover {
+            transform: scale(1.1);
         }
-        
-        .search-icon:hover .material-icons { 
-            opacity: 0.8; 
+
+        .search-icon:hover .material-icons {
+            opacity: 0.8;
         }
-        
+
         /* Hamburger Menu */
-        .hamburger-menu { 
-            transition: transform 0.2s ease; 
+        .hamburger-menu {
+            transition: transform 0.2s ease;
         }
-        
-        .hamburger-menu:hover { 
-            transform: scale(1.05); 
+
+        .hamburger-menu:hover {
+            transform: scale(1.05);
         }
-        
-        .hamburger-menu span { 
-            transition: all 0.3s ease; 
+
+        .hamburger-menu span {
+            transition: all 0.3s ease;
         }
-        
-        .hamburger-menu:hover span { 
-            background-color: rgba(255, 255, 255, 0.8); 
+
+        .hamburger-menu:hover span {
+            background-color: rgba(255, 255, 255, 0.8);
         }
-        
+
         /* Scroll Container */
-        .scroll-container { 
+        .scroll-container {
             scroll-snap-type: y mandatory;
         }
-        
-        section { 
+
+        section {
             scroll-snap-align: start;
         }
-        
+
         /* Navigation Dots */
-        .dot { 
-            transition: all 0.3s; 
+        .dot {
+            transition: all 0.3s;
         }
-        
-        .dot.active { 
-            background-color: rgb(235, 187, 31); 
-            transform: scale(2.5); 
+
+        .dot.active {
+            background-color: #feeea7;
+            transform: scale(2.5);
         }
-        
-        .dot-item:hover .dot { 
-            transform: scale(1.2); 
+
+        .dot-item:hover .dot {
+            transform: scale(1.2);
         }
-        
-        .dot-label { 
-            transition: opacity 0.3s; 
+
+        .dot-label {
+            transition: opacity 0.3s;
         }
-        
-        .dot-item:hover .dot-label { 
-            opacity: 1; 
+
+        .dot-item:hover .dot-label {
+            opacity: 1;
         }
-        
+
         /* Action Buttons */
         .action-button {
             position: relative;
@@ -169,7 +172,7 @@
             z-index: 1;
             transition: color 0.3s ease;
         }
-        
+
         .action-button::before {
             content: '';
             position: absolute;
@@ -183,15 +186,15 @@
             transition: transform 0.3s ease;
             z-index: -1;
         }
-        
+
         .action-button:hover::before {
             transform: scaleX(1);
         }
-        
+
         .action-button:hover {
             color: #052c6e;
         }
-        
+
         /* Shop Buttons - Different hover effect */
         .shop-button {
             position: relative;
@@ -199,7 +202,7 @@
             z-index: 1;
             transition: all 0.3s ease;
         }
-        
+
         .shop-button::before {
             content: '';
             position: absolute;
@@ -213,15 +216,16 @@
             transition: transform 0.3s ease;
             z-index: -1;
         }
-        
+
         .shop-button:hover::before {
             transform: scaleX(1);
         }
-        
+
         .shop-button:hover {
             color: white;
             border-color: #ed34ac;
         }
+
         /* Action Buttons */
         .action-button {
             position: relative;
@@ -229,7 +233,7 @@
             z-index: 1;
             transition: color 0.3s ease;
         }
-        
+
         .action-button::before {
             content: '';
             position: absolute;
@@ -243,11 +247,11 @@
             transition: transform 0.3s ease;
             z-index: -1;
         }
-        
+
         .action-button:hover::before {
             transform: scaleX(1);
         }
-        
+
         .action-button:hover {
             color: #052c6e;
         }
@@ -259,7 +263,7 @@
             z-index: 1;
             transition: color 0.3s ease;
         }
-        
+
         .music-button::before {
             content: '';
             position: absolute;
@@ -273,15 +277,15 @@
             transition: transform 0.3s ease;
             z-index: -1;
         }
-        
+
         .music-button:hover::before {
             transform: scaleX(1);
         }
-        
+
         .music-button:hover {
             color: #f12ea4;
         }
-        
+
 
 
         /* Watch at Home Title */
@@ -290,104 +294,133 @@
             font-weight: 900;
             letter-spacing: 0.05em;
         }
-        
+
         /* Line Divider */
         .line-divider {
             border: none;
             border-top: 2px solid #e740ba;
             margin: 0;
         }
-        
+
         /* Video Item Active State */
         .video-item.active {
             opacity: 1 !important;
         }
-        
+
         .video-item {
             transition: all 0.3s ease;
             opacity: 0.7;
         }
-        
+
         .video-item:hover {
             opacity: 1;
         }
-        
+
         /* Custom Scrollbar for Video List */
         .thumb-list::-webkit-scrollbar {
             width: 6px;
         }
-        
+
         .thumb-list::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 3px;
         }
-        
+
         .thumb-list::-webkit-scrollbar-thumb {
             background: rgba(255, 255, 255, 0.6);
             border-radius: 3px;
         }
-        
+
         .thumb-list::-webkit-scrollbar-thumb:hover {
             background: rgba(255, 255, 255, 0.8);
         }
-        
+
         /* Gallery Navigation Buttons */
         .gallery-nav-button {
             transition: all 0.3s ease;
             background-color: transparent;
             border: none;
         }
-        
+
         .gallery-nav-button:hover svg {
             opacity: 1;
             transform: scale(1.1);
         }
-        
+
         .gallery-nav-button:active svg {
             transform: scale(0.95);
         }
-        
+
         .gallery-nav-button svg {
             transition: all 0.3s ease;
         }
-        
+
         .slider-container {
             transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
         }
     </style>
 </head>
+
 <body class="m-0 p-0">
     <!-- Circle indicators on left -->
     <div class="nav-dots fixed left-[30px] top-1/2 -translate-y-1/2 z-[100] p-[7.5px]">
         <div class="dot-item flex items-center my-[15px] cursor-pointer relative">
-            <div class="dot active w-[5px] h-[5px] rounded-full bg-white/50 flex-shrink-0"></div>
-            <span class="dot-label absolute left-[25px] whitespace-nowrap opacity-0 bg-[#222] text-white py-[6px] px-3 text-[11px] font-bold tracking-[0.05em] uppercase">INTRO</span>
+            <div class="dot active w-[5px] h-[5px] rounded-full bg-[#cde7f7] flex-shrink-0"></div>
+            <span
+                class="dot-label absolute left-[25px] whitespace-nowrap opacity-0 bg-[#222] text-white py-[6px] px-3 text-[11px] font-bold tracking-[0.05em] uppercase">INTRO</span>
         </div>
         <div class="dot-item flex items-center my-[15px] cursor-pointer relative">
-            <div class="dot w-[5px] h-[5px] rounded-full bg-white/50 flex-shrink-0"></div>
-            <span class="dot-label absolute left-[25px] whitespace-nowrap opacity-0 bg-[#222] text-white py-[6px] px-3 text-[11px] font-bold tracking-[0.05em] uppercase">WATCH AT HOME</span>
+            <div class="dot w-[5px] h-[5px] rounded-full bg-[#cde7f7] flex-shrink-0"></div>
+            <span
+                class="dot-label absolute left-[25px] whitespace-nowrap opacity-0 bg-[#222] text-white py-[6px] px-3 text-[11px] font-bold tracking-[0.05em] uppercase">WATCH
+                AT HOME</span>
         </div>
         <div class="dot-item flex items-center my-[15px] cursor-pointer relative">
-            <div class="dot w-[5px] h-[5px] rounded-full bg-white/50 flex-shrink-0"></div>
-            <span class="dot-label absolute left-[25px] whitespace-nowrap opacity-0 bg-[#222] text-white py-[6px] px-3 text-[11px] font-bold tracking-[0.05em] uppercase">ABOUT</span>
+            <div class="dot w-[5px] h-[5px] rounded-full bg-[#cde7f7] flex-shrink-0"></div>
+            <span
+                class="dot-label absolute left-[25px] whitespace-nowrap opacity-0 bg-[#222] text-white py-[6px] px-3 text-[11px] font-bold tracking-[0.05em] uppercase">ABOUT</span>
         </div>
         <div class="dot-item flex items-center my-[15px] cursor-pointer relative">
-            <div class="dot w-[5px] h-[5px] rounded-full bg-white/50 flex-shrink-0"></div>
-            <span class="dot-label absolute left-[25px] whitespace-nowrap opacity-0 bg-[#222] text-white py-[6px] px-3 text-[11px] font-bold tracking-[0.05em] uppercase">VIDEOS</span>
+            <div class="dot w-[5px] h-[5px] rounded-full bg-[#cde7f7] flex-shrink-0"></div>
+            <span
+                class="dot-label absolute left-[25px] whitespace-nowrap opacity-0 bg-[#222] text-white py-[6px] px-3 text-[11px] font-bold tracking-[0.05em] uppercase">VIDEOS</span>
         </div>
         <div class="dot-item flex items-center my-[15px] cursor-pointer relative">
-            <div class="dot w-[5px] h-[5px] rounded-full bg-white/50 flex-shrink-0"></div>
-            <span class="dot-label absolute left-[25px] whitespace-nowrap opacity-0 bg-[#222] text-white py-[6px] px-3 text-[11px] font-bold tracking-[0.05em] uppercase">GALLERY</span>
+            <div class="dot w-[5px] h-[5px] rounded-full bg-[#cde7f7] flex-shrink-0"></div>
+            <span
+                class="dot-label absolute left-[25px] whitespace-nowrap opacity-0 bg-[#222] text-white py-[6px] px-3 text-[11px] font-bold tracking-[0.05em] uppercase">GALLERY</span>
+        </div>
+        <div class="dot-item flex items-center my-[15px] cursor-pointer relative">
+            <div class="dot w-[5px] h-[5px] rounded-full bg-[#cde7f7] flex-shrink-0"></div>
+            <span
+                class="dot-label absolute left-[25px] whitespace-nowrap opacity-0 bg-[#222] text-white py-[6px] px-3 text-[11px] font-bold tracking-[0.05em] uppercase">SHOP</span>
+        </div>
+        <div class="dot-item flex items-center my-[15px] cursor-pointer relative">
+            <div class="dot w-[5px] h-[5px] rounded-full bg-[#cde7f7] flex-shrink-0"></div>
+            <span
+                class="dot-label absolute left-[25px] whitespace-nowrap opacity-0 bg-[#222] text-white py-[6px] px-3 text-[11px] font-bold tracking-[0.05em] uppercase">PRETTY
+                GLITTER KITTY LITTER</span>
+        </div>
+        <div class="dot-item flex items-center my-[15px] cursor-pointer relative">
+            <div class="dot w-[5px] h-[5px] rounded-full bg-[#cde7f7] flex-shrink-0"></div>
+            <span
+                class="dot-label absolute left-[25px] whitespace-nowrap opacity-0 bg-[#222] text-white py-[6px] px-3 text-[11px] font-bold tracking-[0.05em] uppercase">MUSIC</span>
+        </div>
+        <div class="dot-item flex items-center my-[15px] cursor-pointer relative">
+            <div class="dot w-[5px] h-[5px] rounded-full bg-[#cde7f7] flex-shrink-0"></div>
+            <span
+                class="dot-label absolute left-[25px] whitespace-nowrap opacity-0 bg-[#222] text-white py-[6px] px-3 text-[11px] font-bold tracking-[0.05em] uppercase">POSTER</span>
         </div>
     </div>
-    
+
     <!-- Navigation Bar -->
     <nav class="main-nav fixed top-0 left-0 right-0 w-full z-[1000] m-0 p-0" id="mainNav">
         <div class="nav-container flex items-center justify-between w-full h-full px-[60px] m-0">
 
             <div class="nav-left flex-none mr-auto">
                 <a href="#" class="logo-link flex items-center m-0 p-0">
-                    <img src="./img/dreamworks-animation-logo-black-and-white.png" alt="DreamWorks" class="nav-logo h-[61px] w-[104px]">
+                    <img src="./img/dreamworks-animation-logo-black-and-white.png" alt="DreamWorks"
+                        class="nav-logo h-[61px] w-[104px]">
                 </a>
             </div>
 
@@ -395,28 +428,36 @@
             <div class="nav-center flex-1 flex justify-end items-center mx-auto">
                 <ul class="social-links flex list-none gap-[30px] ml-10 pr-10 items-center m-0 p-0">
                     <li class="flex items-center m-0 p-0">
-                        <a href="https://x.com/DreamWorks" target="_blank" aria-label="Twitter" class="flex items-center justify-center w-[30px] h-[30px]">
+                        <a href="https://x.com/DreamWorks" target="_blank" aria-label="Twitter"
+                            class="flex items-center justify-center w-[30px] h-[30px]">
                             <img src="./img/icons8-x.svg" alt="Twitter" class="w-[30px] h-[30px] object-contain">
                         </a>
                     </li>
                     <li class="flex items-center m-0 p-0">
-                        <a href="https://www.facebook.com/DreamWorksAnimation" target="_blank" aria-label="Facebook" class="flex items-center justify-center w-[30px] h-[30px]">
-                            <img src="./img/icons8-facebook.svg" alt="Facebook" class="w-[30px] h-[30px] object-contain">
+                        <a href="https://www.facebook.com/DreamWorksAnimation" target="_blank" aria-label="Facebook"
+                            class="flex items-center justify-center w-[30px] h-[30px]">
+                            <img src="./img/icons8-facebook.svg" alt="Facebook"
+                                class="w-[30px] h-[30px] object-contain">
                         </a>
                     </li>
                     <li class="flex items-center m-0 p-0">
-                        <a href="https://www.youtube.com/user/DreamWorksTV" target="_blank" aria-label="YouTube" class="flex items-center justify-center w-[30px] h-[30px]">
+                        <a href="https://www.youtube.com/user/DreamWorksTV" target="_blank" aria-label="YouTube"
+                            class="flex items-center justify-center w-[30px] h-[30px]">
                             <img src="./img/icons8-youtube.svg" alt="YouTube" class="w-[30px] h-[30px] object-contain">
                         </a>
                     </li>
                     <li class="flex items-center m-0 p-0">
-                        <a href="https://www.instagram.com/dreamworks/" target="_blank" aria-label="Instagram" class="flex items-center justify-center w-[30px] h-[30px]">
-                            <img src="./img/icons8-instagram-64 .png" alt="Instagram" class="w-[30px] h-[30px] object-contain">
+                        <a href="https://www.instagram.com/dreamworks/" target="_blank" aria-label="Instagram"
+                            class="flex items-center justify-center w-[30px] h-[30px]">
+                            <img src="./img/icons8-instagram-64 .png" alt="Instagram"
+                                class="w-[30px] h-[30px] object-contain">
                         </a>
                     </li>
                     <li class="flex items-center m-0 p-0">
-                        <a href="https://www.tiktok.com/@dreamworks" target="_blank" aria-label="TikTok" class="flex items-center justify-center w-[30px] h-[30px]">
-                            <img src="./img/icon-tiktok-white.svg" alt="TikTok" class="w-[30px] h-[30px] object-contain">
+                        <a href="https://www.tiktok.com/@dreamworks" target="_blank" aria-label="TikTok"
+                            class="flex items-center justify-center w-[30px] h-[30px]">
+                            <img src="./img/icon-tiktok-white.svg" alt="TikTok"
+                                class="w-[30px] h-[30px] object-contain">
                         </a>
                     </li>
                 </ul>
@@ -426,21 +467,28 @@
             <div class="nav-right flex-none ml-auto">
                 <ul class="nav-menu flex list-none items-center gap-0 h-full m-0 p-0">
                     <li class="flex items-center h-full m-0 p-0">
-                        <a href="#" class="search-icon text-white no-underline cursor-pointer flex items-center justify-center w-[74px] h-full" aria-label="Search">
+                        <a href="#"
+                            class="search-icon text-white no-underline cursor-pointer flex items-center justify-center w-[74px] h-full"
+                            aria-label="Search">
                             <span class="material-icons text-2xl text-white">search</span>
                         </a>
                     </li>
                     <li class="flex items-center h-full m-0 p-0">
-                        <a href="#" class="nav-link text-white no-underline text-[13px] font-bold tracking-[0.5px] px-[30px] flex items-center justify-center h-full whitespace-nowrap">MOVIES</a>
+                        <a href="#"
+                            class="nav-link text-white no-underline text-[13px] font-bold tracking-[0.5px] px-[30px] flex items-center justify-center h-full whitespace-nowrap">MOVIES</a>
                     </li>
                     <li class="flex items-center h-full m-0 p-0">
-                        <a href="#" class="nav-link text-white no-underline text-[13px] font-bold tracking-[0.5px] px-[30px] flex items-center justify-center h-full whitespace-nowrap">TV</a>
+                        <a href="#"
+                            class="nav-link text-white no-underline text-[13px] font-bold tracking-[0.5px] px-[30px] flex items-center justify-center h-full whitespace-nowrap">TV</a>
                     </li>
                     <li class="flex items-center h-full m-0 p-0">
-                        <a href="#" class="nav-link text-white no-underline text-[13px] font-bold tracking-[0.5px] px-[30px] flex items-center justify-center h-full whitespace-nowrap">EXPLORE</a>
+                        <a href="#"
+                            class="nav-link text-white no-underline text-[13px] font-bold tracking-[0.5px] px-[30px] flex items-center justify-center h-full whitespace-nowrap">EXPLORE</a>
                     </li>
                     <li class="flex items-center h-full m-0 p-0">
-                        <button class="hamburger-menu bg-transparent border-none cursor-pointer px-[30px] h-full flex flex-col justify-center items-center gap-1 m-0" aria-label="Menu">
+                        <button
+                            class="hamburger-menu bg-transparent border-none cursor-pointer px-[30px] h-full flex flex-col justify-center items-center gap-1 m-0"
+                            aria-label="Menu">
                             <span class="block w-5 h-[2px] bg-white"></span>
                             <span class="block w-5 h-[2px] bg-white"></span>
                             <span class="block w-5 h-[2px] bg-white"></span>
@@ -460,21 +508,33 @@
                 </video>
                 <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
             </div>
-            
-            <div class="centered-content home-entry relative z-10 flex flex-col items-center justify-center w-full h-full m-0 p-0">
+
+            <div
+                class="centered-content home-entry relative z-10 flex flex-col items-center justify-center w-full h-full m-0 p-0">
                 <figure class="flex justify-center items-center m-0 p-0">
-                    <img id="logo-img" src="./img/gabbys-dollhouse-the-movie-logo-lockup-physical-now.png" alt="Gabby's Dollhouse: The Movie available now on Digital, Blu-ray™ & DVD" class="w-[400px] h-auto block mx-auto">
+                    <img id="logo-img" src="./img/gabbys-dollhouse-the-movie-logo-lockup-physical-now.png"
+                        alt="Gabby's Dollhouse: The Movie available now on Digital, Blu-ray™ & DVD"
+                        class="w-[400px] h-auto block mx-auto">
                 </figure>
                 <footer class="flex w-[400px] h-auto justify-center items-center gap-5 mb-[200px] p-0">
-                    <button class="action-button text-white border border-white bg-transparent py-[10px] px-[15px] mt-5 w-[180px] text-[12px] font-bold cursor-pointer uppercase flex items-center justify-center">Watch Trailer</button>
-                    <button class="action-button text-white border border-white bg-transparent py-[10px] px-[15px] mt-5 w-[180px] text-[12px] font-bold cursor-pointer uppercase flex items-center justify-center">Watch at home</button>
+                    <button
+                        class="action-button text-white border border-white bg-transparent py-[10px] px-[15px] mt-5 w-[180px] text-[12px] font-bold cursor-pointer uppercase flex items-center justify-center">Watch
+                        Trailer</button>
+                    <button
+                        class="action-button text-white border border-white bg-transparent py-[10px] px-[15px] mt-5 w-[180px] text-[12px] font-bold cursor-pointer uppercase flex items-center justify-center">Watch
+                        at home</button>
                 </footer>
-                <div class="home-ent-content absolute bottom-0 left-0 right-0 w-full flex flex-col justify-end items-center">
+                <div
+                    class="home-ent-content absolute bottom-0 left-0 right-0 w-full flex flex-col justify-end items-center">
                     <div class="relative w-full max-w-[375px] flex justify-center">
-                        <img class="w-full h-auto z-0" src="./img/gabbys-dollhouse-the-movie-hero-products-background.png" alt="Gabby's Dollhouse: The Movie products background">
+                        <img class="w-full h-auto z-0"
+                            src="./img/gabbys-dollhouse-the-movie-hero-products-background.png"
+                            alt="Gabby's Dollhouse: The Movie products background">
                         <a href="#" class="blu-ray-dvd absolute bottom-[10px] left-1/2 -translate-x-1/2 z-10">
                             <div class="w-[150px]">
-                                <img class="w-full h-auto hover:scale-110 transition-all duration-300" src="./img/gabbys-dollhouse-the-movie-product-bluray-dvd.png" alt="Gabby's Dollhouse: The Movie Blu-ray™ & DVD">
+                                <img class="w-full h-auto hover:scale-110 transition-all duration-300"
+                                    src="./img/gabbys-dollhouse-the-movie-product-bluray-dvd.png"
+                                    alt="Gabby's Dollhouse: The Movie Blu-ray™ & DVD">
                             </div>
                         </a>
                     </div>
@@ -482,46 +542,58 @@
             </div>
         </section>
 
-        <section class="watch-at-home relative w-full h-screen flex flex-col justify-start items-center pt-[70px] bg-[#fabde7] m-0 p-0">
-            <img src="./img/gabbys-dollhouse-the-movie-logo-lockup-retailers-physical-now3.png" alt="Gabby's Dollhouse: The Movie available now on Digital, Blu-ray™ & DVD" class="max-w-[451px] h-auto mb-8">
+        <section
+            class="watch-at-home relative w-full h-screen flex flex-col justify-start items-center pt-[70px] bg-[#fabde7] m-0 p-0">
+            <img src="./img/gabbys-dollhouse-the-movie-logo-lockup-retailers-physical-now3.png"
+                alt="Gabby's Dollhouse: The Movie available now on Digital, Blu-ray™ & DVD"
+                class="max-w-[451px] h-auto mb-8">
             <div class="flex flex-col items-center justify-start gap-5 w-full max-w-[900px] mx-auto">
                 <div class="title flex items-center justify-center gap-5 w-full px-5">
                     <hr class="line-divider flex-1">
-                    <h3 class="watch-at-home-title text-center text-[#e740ba] text-[28px] font-bold tracking-[0.5px] uppercase whitespace-nowrap">WATCH AT HOME ON THESE RETAILERS</h3>
+                    <h3
+                        class="watch-at-home-title text-center text-[#e740ba] text-[28px] font-bold tracking-[0.5px] uppercase whitespace-nowrap">
+                        WATCH AT HOME ON THESE RETAILERS</h3>
                     <hr class="line-divider flex-1">
                 </div>
                 <ul class="retailers-list flex flex-wrap items-center justify-center gap-5 list-none m-0 p-0">
-                    <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                    <li
+                        class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
                         <figure class="flex items-center justify-center w-[169px] h-[46px] m-0 p-0">
                             <img src="./img/Vudu_FandangoAtHomelogo.png" alt="Vudu" class="w-auto h-[100%]">
                         </figure>
                     </li>
-                    <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                    <li
+                        class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
                         <figure class="flex items-center justify-center w-[169px] h-[46px] m-0 p-0">
                             <img src="./img/xfinity-logo-may2022.png" alt="Xfinity" class="w-auto h-[100%]">
                         </figure>
                     </li>
-                    <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                    <li
+                        class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
                         <figure class="flex items-center justify-center w-[169px] h-[46px] m-0 p-0">
                             <img src="./img/prime-video-logo.png" alt="Prime Video" class="w-auto h-[100%]">
                         </figure>
                     </li>
-                    <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                    <li
+                        class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
                         <figure class="flex items-center justify-center w-[169px] h-[46px] m-0 p-0">
                             <img src="./img/Apple_TV_logo2.png" alt="Apple TV" class="w-auto h-[100%]">
                         </figure>
                     </li>
-                    <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                    <li
+                        class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
                         <figure class="flex items-center justify-center w-[169px] h-[46px] m-0 p-0">
                             <img src="./img/youtube_buyIton.png" alt="YouTube" class="w-auto h-[100%]">
                         </figure>
                     </li>
-                    <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                    <li
+                        class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
                         <figure class="flex items-center justify-center w-[169px] h-[46px] m-0 p-0">
                             <img src="./img/verizon-logopng.png" alt="Verizon" class="w-auto h-[100%]">
                         </figure>
                     </li>
-                    <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                    <li
+                        class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
                         <figure class="flex items-center justify-center w-[169px] h-[46px] m-0 p-0">
                             <img src="./img/dish-logo-oct2025.png" alt="Dish" class="w-auto h-[100%]">
                         </figure>
@@ -532,26 +604,32 @@
                 </ul>
                 <div class="title flex items-center justify-center gap-5 w-full mt-5 px-5">
                     <hr class="line-divider flex-1">
-                    <h3 class="watch-at-home-title text-center text-[#e740ba] text-[28px] font-bold tracking-[0.5px] uppercase whitespace-nowrap">Blu-ray™ & DVD</h3>
+                    <h3
+                        class="watch-at-home-title text-center text-[#e740ba] text-[28px] font-bold tracking-[0.5px] uppercase whitespace-nowrap">
+                        Blu-ray™ & DVD</h3>
                     <hr class="line-divider flex-1">
                 </div>
                 <ul class="retailers-list flex flex-wrap items-center justify-center gap-5 list-none m-0 p-0">
-                    <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                    <li
+                        class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
                         <figure class="flex items-center justify-center w-[169px] h-[46px] m-0 p-0">
                             <img src="./img/amazon.png" alt="Amazon" class="w-auto h-[100%]">
                         </figure>
                     </li>
-                    <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                    <li
+                        class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
                         <figure class="flex items-center justify-center w-[169px] h-[46px] m-0 p-0">
                             <img src="./img/target-v2-logo-he.png" alt="Target" class="w-auto h-[100%]">
                         </figure>
                     </li>
-                    <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                    <li
+                        class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
                         <figure class="flex items-center justify-center w-[169px] h-[46px] m-0 p-0">
                             <img src="./img/walmart-v2-he-logo.png" alt="Walmart" class="w-auto h-[100%]">
                         </figure>
                     </li>
-                    <li class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
+                    <li
+                        class="flex items-center justify-center w-[207px] h-[60px] bg-white rounded-[20px] border-2 border-[#fbbde8] shadow-[0_4px_0_0_#89296f]">
                         <figure class="flex items-center justify-center w-[169px] h-[46px] m-0 p-0">
                             <img src="./img/gruv.png" alt="Gruv" class="w-auto h-[100%]">
                         </figure>
@@ -563,35 +641,68 @@
         <section class="about relative w-full flex flex-row m-0 p-0">
 
             <div class="left-content w-1/2 bg-gradient-to-b from-[#f72399] to-[#f02ea6] flex items-center justify-end ">
-                <div class="detail-closed w-[720px] text-[15px] leading-normal text-white font-['TT_Norms_W01_Regular',_Helvetica,_sans-serif] py-[40px] pr-[20px] pb-[60px] pl-[50px]">
-                    <h2 class="font-['Futura'] text-[rgb(255,239,166)] text-[25px] font-bold leading-normal uppercase mb-[30px]">About</h2>
+                <div
+                    class="detail-closed w-[720px] text-[15px] leading-normal text-white font-['TT_Norms_W01_Regular',_Helvetica,_sans-serif] py-[40px] pr-[20px] pb-[60px] pl-[50px]">
+                    <h2
+                        class="font-['Futura'] text-[rgb(255,239,166)] text-[25px] font-bold leading-normal uppercase mb-[30px]">
+                        About</h2>
                     <div class="fold-up">
-                        <p class="pr-[60px] mt-[20px]">DreamWorks Animation elevates its global smash streaming series into its first ever cinematic adventure with <em>Gabby's Dollhouse: The Movie.</em></p>
-                        
+                        <p class="pr-[60px] mt-[20px]">DreamWorks Animation elevates its global smash streaming series
+                            into its first ever cinematic adventure with <em>Gabby's Dollhouse: The Movie.</em></p>
+
                         <p class="pr-[60px] mt-[20px]">
-                            Since the debut of the <em>Gabby's Dollhouse</em> series in 2021, kids around the world have been having one big sprinkle party with Gabby and her friends on Netflix. Created by celebrated storytellers Traci Paige Johnson and Jennifer Twomey, <em>Gabby's Dollhouse</em> is a mixed media preschool series that unboxes a surprise before jumping into a fantastical animated world full of adorable cat characters that live inside Gabby's dollhouse.
+                            Since the debut of the <em>Gabby's Dollhouse</em> series in 2021, kids around the world have
+                            been having one big sprinkle party with Gabby and her friends on Netflix. Created by
+                            celebrated storytellers Traci Paige Johnson and Jennifer Twomey, <em>Gabby's Dollhouse</em>
+                            is a mixed media preschool series that unboxes a surprise before jumping into a fantastical
+                            animated world full of adorable cat characters that live inside Gabby's dollhouse.
                         </p>
-                        
+
                         <p class="pr-[60px] mt-[20px]">
-                            In the new film, Gabby (Laila Lockhart Kraner, reprising her role from the series) heads out on a road trip with her Grandma Gigi (four-time Grammy Award winner Gloria Estefan) to the urban wonderland of Cat Francisco. But when Gabby's dollhouse, her most prized possession, ends up in the hands of an eccentric cat lady named Vera (Oscar® nominee Kristen Wiig), Gabby sets off on an adventure through the real world to get the Gabby Cats back together and save the dollhouse before it's too late.
+                            In the new film, Gabby (Laila Lockhart Kraner, reprising her role from the series) heads out
+                            on a road trip with her Grandma Gigi (four-time Grammy Award winner Gloria Estefan) to the
+                            urban wonderland of Cat Francisco. But when Gabby's dollhouse, her most prized possession,
+                            ends up in the hands of an eccentric cat lady named Vera (Oscar® nominee Kristen Wiig),
+                            Gabby sets off on an adventure through the real world to get the Gabby Cats back together
+                            and save the dollhouse before it's too late.
                         </p>
-                        
+
                         <p class="pr-[60px] mt-[20px]">
-                            The all-star comedic voice cast includes <em>Saturday Night Live</em> powerhouses Ego Nwodim, Kyle Mooney and Melissa Villaseñor, as well as Emmy nominee Thomas Lennon (<em>Reno 911!</em>, <em>American Dad!</em>), Jason Mantzoukas (<em>Invincible</em>, <em>Big Mouth</em>), and Fortune Feimster (<em>Fortune Feimster: Crushing It</em>, <em>Velma</em>). The beloved series voice cast reprises their roles as Pandy Paws, CatRat, Cakey, DJ Catnip, Baby Box, MerCat and more.
+                            The all-star comedic voice cast includes <em>Saturday Night Live</em> powerhouses Ego
+                            Nwodim, Kyle Mooney and Melissa Villaseñor, as well as Emmy nominee Thomas Lennon (<em>Reno
+                                911!</em>, <em>American Dad!</em>), Jason Mantzoukas (<em>Invincible</em>, <em>Big
+                                Mouth</em>), and Fortune Feimster (<em>Fortune Feimster: Crushing It</em>,
+                            <em>Velma</em>). The beloved series voice cast reprises their roles as Pandy Paws, CatRat,
+                            Cakey, DJ Catnip, Baby Box, MerCat and more.
                         </p>
-                        
+
                         <p class="pr-[60px] mt-[20px]">
-                            <em>Gabby's Dollhouse: The Movie</em> is directed by Ryan Crego (executive producer of <em>Home: Adventures with Tip & Oh</em>, <em>I Heart Arlo</em>), who earned a Children's and Family Emmy nomination for his television feature <em>Arlo the Alligator Boy</em>. The film is produced by Steven Schwenckert, who has served as a production supervisor or co-producer on some of DreamWorks Animation's biggest blockbusters including <em>How to Train Your Dragon</em>, <em>The Croods</em> and most recently, <em>Kung Fu Panda 4</em> which has earned more than $500 million worldwide. The film is executive produced by Jennifer Twomey and Traci Paige Johnson, based on the <em>Gabby's Dollhouse</em> series created by them.
+                            <em>Gabby's Dollhouse: The Movie</em> is directed by Ryan Crego (executive producer of
+                            <em>Home: Adventures with Tip & Oh</em>, <em>I Heart Arlo</em>), who earned a Children's and
+                            Family Emmy nomination for his television feature <em>Arlo the Alligator Boy</em>. The film
+                            is produced by Steven Schwenckert, who has served as a production supervisor or co-producer
+                            on some of DreamWorks Animation's biggest blockbusters including <em>How to Train Your
+                                Dragon</em>, <em>The Croods</em> and most recently, <em>Kung Fu Panda 4</em> which has
+                            earned more than $500 million worldwide. The film is executive produced by Jennifer Twomey
+                            and Traci Paige Johnson, based on the <em>Gabby's Dollhouse</em> series created by them.
                         </p>
-                        
+
                         <p class="pr-[60px] mt-[20px]">
-                            This year, according to Nielsen, the <em>Gabby's Dollhouse</em> series has been the most-viewed streaming original series for kids. Netflix expanded the series to 100 total episodes, and the 12th season begins on Netflix November 17, 2025.
+                            This year, according to Nielsen, the <em>Gabby's Dollhouse</em> series has been the
+                            most-viewed streaming original series for kids. Netflix expanded the series to 100 total
+                            episodes, and the 12th season begins on Netflix November 17, 2025.
                         </p>
-                        
+
                         <p class="pr-[60px] mt-[20px]">
-                            Rooted in a growth mindset, Gabby's activity-based episodes encourage flexible thinking and learning from your mistakes. The <em>Gabby's Dollhouse</em> series has been in the Top 10 in TV in 63 countries on Netflix and has become a top preschool brand around the world, inspiring an award-winning toy line, publishing, home, apparel, and more, as well as original music, a top-rated app and a growing YouTube channel visited by millions of fans weekly. Additionally, <em>Gabby's Dollhouse</em> continues to expand through Universal Destinations & Experiences theme parks, global fan experiences, live events and more.
+                            Rooted in a growth mindset, Gabby's activity-based episodes encourage flexible thinking and
+                            learning from your mistakes. The <em>Gabby's Dollhouse</em> series has been in the Top 10 in
+                            TV in 63 countries on Netflix and has become a top preschool brand around the world,
+                            inspiring an award-winning toy line, publishing, home, apparel, and more, as well as
+                            original music, a top-rated app and a growing YouTube channel visited by millions of fans
+                            weekly. Additionally, <em>Gabby's Dollhouse</em> continues to expand through Universal
+                            Destinations & Experiences theme parks, global fan experiences, live events and more.
                         </p>
-                        
+
                         <div class="pr-[60px] mt-[20px]">
                             <ul class="flex list-none gap-[10px]">
                                 <li class="flex items-center justify-center">
@@ -599,32 +710,37 @@
                                 </li>
                                 <li>
                                     <a href="https://x.com/gabbysdollhouse" target="_blank">
-                                        <img src="./img/icons-x-gold.png" alt="X" class="w-[30px] h-[30px] object-contain">
+                                        <img src="./img/icons-x-gold.png" alt="X"
+                                            class="w-[30px] h-[30px] object-contain">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="https://www.facebook.com/gabbysdollhouse" target="_blank">
-                                        <img src="./img/icons-facebook-gold.svg" alt="Facebook" class="w-[30px] h-[30px] object-contain">
+                                        <img src="./img/icons-facebook-gold.svg" alt="Facebook"
+                                            class="w-[30px] h-[30px] object-contain">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="https://www.instagram.com/gabbysdollhouse/" target="_blank">
-                                        <img src="./img/icons-instagram-gold.svg" alt="Instagram" class="w-[30px] h-[30px] object-contain">
+                                        <img src="./img/icons-instagram-gold.svg" alt="Instagram"
+                                            class="w-[30px] h-[30px] object-contain">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="https://www.tiktok.com/@dreamworks" target="_blank">
-                                        <img src="./img/icons-tiktok-gold.svg" alt="TikTok" class="w-[30px] h-[30px] object-contain">
+                                        <img src="./img/icons-tiktok-gold.svg" alt="TikTok"
+                                            class="w-[30px] h-[30px] object-contain">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="https://www.youtube.com/c/@PeacockKids" target="_blank">
-                                        <img src="./img/icons-youtube-gold.svg" alt="YouTube" class="w-[30px] h-[30px] object-contain">
+                                        <img src="./img/icons-youtube-gold.svg" alt="YouTube"
+                                            class="w-[30px] h-[30px] object-contain">
                                     </a>
                                 </li>
 
                         </div>
-                        
+
                         <div class="pr-[60px] mt-[30px]">
                             <p class="font-bold">Cast:</p>
                             <p>Laila Lockhart Kraner</p>
@@ -637,7 +753,7 @@
                             <p>Melissa Villaseñor</p>
                             <p>Fortune Feimster</p>
                         </div>
-                        
+
                         <div class="pr-[60px] mt-[30px]">
                             <p class="font-bold">Crew:</p>
                             <p>Ryan Crego (Director)</p>
@@ -645,75 +761,95 @@
                             <p>Jennifer Twomey (Executive Producer)</p>
                             <p>Traci Paige Johnson (Executive Producer)</p>
                         </div>
-                        
+
                         <div class="pr-[60px] mt-[30px]">
                             <p class="font-bold">Available Now on</p>
                             <p>Digital, Blu-ray™ & DVD</p>
                         </div>
-                        
+
                         <div class="pr-[60px] mt-[30px]">
                             <p class="font-bold">2025</p>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
 
             <div class="right-content w-1/2">
-                <img src="./img/gabbys-dollhouse-the-movie-about-desktop3.jpg" alt="Gabby's Dollhouse: The Movie about" class="w-full h-full object-cover">
+                <img src="./img/gabbys-dollhouse-the-movie-about-desktop3.jpg" alt="Gabby's Dollhouse: The Movie about"
+                    class="w-full h-full object-cover">
             </div>
         </section>
-        
-        <section class="videos relative w-full h-screen m-0 p-0" style="background-image: url('./img/videos-background.png'); background-size: cover; background-position: center;">
+
+        <section class="videos relative w-full h-screen m-0 p-0"
+            style="background-image: url('./img/videos-background.png'); background-size: cover; background-position: center;">
 
             <div class="absolute inset-0 w-full h-full bg-black opacity-80"></div>
-            
+
 
             <div class="absolute inset-0 w-full h-full flex items-center justify-center z-10 pointer-events-none">
-                <button id="main-play-button" class="youtube-play-button cursor-pointer pointer-events-auto transition-all group hover:scale-110" data-video-id="CBYr0fRynC0">
-                    <img src="./img/youtube-play-button.png" alt="Play Video" class="w-[75px] h-[52.92px] opacity-40 group-hover:opacity-100 group-hover:brightness-125 transition-all">
+                <button id="main-play-button"
+                    class="youtube-play-button cursor-pointer pointer-events-auto transition-all group hover:scale-110"
+                    data-video-id="CBYr0fRynC0">
+                    <img src="./img/youtube-play-button.png" alt="Play Video"
+                        class="w-[75px] h-[52.92px] opacity-40 group-hover:opacity-100 group-hover:brightness-125 transition-all">
                 </button>
             </div>
-            
+
             <div class="overplay absolute inset-0 w-full h-full flex justify-center items-start z-20">
                 <div class="content w-[1440px] h-full flex">
-                    <div class="left-bar w-[320px] pl-[50px] pt-[10px] pb-[10px] top-[30px] h-full relative flex flex-col">
-                        <h2 class="font-['Paytone_One'] text-[#FFEFA6] text-[28px] font-normal mb-6 uppercase flex-shrink-0">Videos</h2>
+                    <div
+                        class="left-bar w-[320px] pl-[50px] pt-[10px] pb-[10px] top-[30px] h-full relative flex flex-col">
+                        <h2
+                            class="font-['Paytone_One'] text-[#FFEFA6] text-[28px] font-normal mb-6 uppercase flex-shrink-0">
+                            Videos</h2>
                         <div class="thumb-list flex-1 overflow-y-scroll">
                             <ul class="list-none m-0 p-0">
-                                <li class="video-item flex items-start gap-3 w-[252px] h-[90px] py-3 border-b border-[#4891a1] cursor-pointer opacity-100 transition-opacity hover:opacity-100 active" data-video-thumb="./img/video-thumb-1.jpg" data-video-id="CBYr0fRynC0">
+                                <li class="video-item flex items-start gap-3 w-[252px] h-[90px] py-3 border-b border-[#4891a1] cursor-pointer opacity-100 transition-opacity hover:opacity-100 active"
+                                    data-video-thumb="./img/video-thumb-1.jpg" data-video-id="CBYr0fRynC0">
                                     <div class="video-thumbnail w-[120px] h-[70px] flex-shrink-0">
-                                        <img src="./img/video-thumb-1.jpg" alt="Video Thumbnail" class="w-full h-full object-cover">
+                                        <img src="./img/video-thumb-1.jpg" alt="Video Thumbnail"
+                                            class="w-full h-full object-cover">
                                     </div>
                                     <div class="video-info flex-1">
-                                        <p class="text-white text-[11px] font-['Roboto'] leading-tight">Gabby's Dollhouse: The Movie | Kristen Wiig Unleashed</p>
+                                        <p class="text-white text-[11px] font-['Roboto'] leading-tight">Gabby's
+                                            Dollhouse: The Movie | Kristen Wiig Unleashed</p>
                                     </div>
                                 </li>
-                                
-                                <li class="video-item flex items-start gap-3 w-[252px] h-[90px] py-3 border-b border-[#4891a1] cursor-pointer opacity-70 transition-opacity hover:opacity-100" data-video-thumb="./img/video-thumb-2.jpg" data-video-id="0MV7sT00ZXw">
+
+                                <li class="video-item flex items-start gap-3 w-[252px] h-[90px] py-3 border-b border-[#4891a1] cursor-pointer opacity-70 transition-opacity hover:opacity-100"
+                                    data-video-thumb="./img/video-thumb-2.jpg" data-video-id="0MV7sT00ZXw">
                                     <div class="video-thumbnail w-[120px] h-[70px] flex-shrink-0">
-                                        <img src="./img/video-thumb-2.jpg" alt="Video Thumbnail" class="w-full h-full object-cover">
+                                        <img src="./img/video-thumb-2.jpg" alt="Video Thumbnail"
+                                            class="w-full h-full object-cover">
                                     </div>
                                     <div class="video-info flex-1">
-                                        <p class="text-white text-[11px] font-['Roboto'] leading-tight">Gabby's Dollhouse: The Movie | Fun with Cookie Bobby</p>
+                                        <p class="text-white text-[11px] font-['Roboto'] leading-tight">Gabby's
+                                            Dollhouse: The Movie | Fun with Cookie Bobby</p>
                                     </div>
                                 </li>
-                                
-                                <li class="video-item flex items-start gap-3 w-[252px] h-[90px] py-3 border-b border-[#4891a1] cursor-pointer opacity-70 transition-opacity hover:opacity-100" data-video-thumb="./img/video-thumb-3.jpg" data-video-id="XxDQSS3IeVM">
+
+                                <li class="video-item flex items-start gap-3 w-[252px] h-[90px] py-3 border-b border-[#4891a1] cursor-pointer opacity-70 transition-opacity hover:opacity-100"
+                                    data-video-thumb="./img/video-thumb-3.jpg" data-video-id="XxDQSS3IeVM">
                                     <div class="video-thumbnail w-[120px] h-[70px] flex-shrink-0">
-                                        <img src="./img/video-thumb-3.jpg" alt="Video Thumbnail" class="w-full h-full object-cover">
+                                        <img src="./img/video-thumb-3.jpg" alt="Video Thumbnail"
+                                            class="w-full h-full object-cover">
                                     </div>
                                     <div class="video-info flex-1">
-                                        <p class="text-white text-[11px] font-['Roboto'] leading-tight">Gabby's Dollhouse: The Movie | Cat-tastic Actors Gone Wild</p>
+                                        <p class="text-white text-[11px] font-['Roboto'] leading-tight">Gabby's
+                                            Dollhouse: The Movie | Cat-tastic Actors Gone Wild</p>
                                     </div>
                                 </li>
-                                
-                                <li class="video-item flex items-start gap-3 w-[252px] h-[90px] py-3 cursor-pointer opacity-70 transition-opacity hover:opacity-100" data-video-thumb="./img/video-thumb-4.jpg" data-video-id="iqyvMtdWRpU">
+
+                                <li class="video-item flex items-start gap-3 w-[252px] h-[90px] py-3 cursor-pointer opacity-70 transition-opacity hover:opacity-100"
+                                    data-video-thumb="./img/video-thumb-4.jpg" data-video-id="iqyvMtdWRpU">
                                     <div class="video-thumbnail w-[120px] h-[70px] flex-shrink-0">
-                                        <img src="./img/video-thumb-4.jpg" alt="Video Thumbnail" class="w-full h-full object-cover">
+                                        <img src="./img/video-thumb-4.jpg" alt="Video Thumbnail"
+                                            class="w-full h-full object-cover">
                                     </div>
                                     <div class="video-info flex-1">
-                                        <p class="text-white text-[11px] font-['Roboto'] leading-tight">Gabby's Dollhouse: The Movie | Pretty Glitter Kitty Litter</p>
+                                        <p class="text-white text-[11px] font-['Roboto'] leading-tight">Gabby's
+                                            Dollhouse: The Movie | Pretty Glitter Kitty Litter</p>
                                     </div>
                                 </li>
                             </ul>
@@ -724,65 +860,77 @@
         </section>
 
         <section class="gallery-section relative w-full h-screen overflow-hidden">
-        
+
             <!-- Slider Viewport -->
             <div class="relative w-full h-full overflow-hidden">
                 <!-- Slider Container with all images in a row -->
                 <div class="gallery-slider-container absolute top-0 left-0 h-full flex" id="gallerySlider">
-                    
+
                     <!-- Clone of SLIDE 5 (for infinite loop - shows on LEFT at start) -->
                     <div class="gallery-slide flex-shrink-0 w-screen h-screen" data-clone="true">
-                        <img src="./img/gabbys-dollhouse-the-movie-gallery-5.jpg" alt="Gallery Image 5 Clone" class="w-full h-full object-cover">
+                        <img src="./img/gabbys-dollhouse-the-movie-gallery-5.jpg" alt="Gallery Image 5 Clone"
+                            class="w-full h-full object-cover">
                     </div>
-                    
+
                     <!-- SLIDE 1 -->
                     <div class="gallery-slide flex-shrink-0 w-screen h-screen" data-index="0">
-                        <img src="./img/gabbys-dollhouse-the-movie-gallery-1.jpg" alt="Gallery Image 1" class="w-full h-full object-cover">
+                        <img src="./img/gabbys-dollhouse-the-movie-gallery-1.jpg" alt="Gallery Image 1"
+                            class="w-full h-full object-cover">
                     </div>
-                    
+
                     <!-- SLIDE 2 -->
                     <div class="gallery-slide flex-shrink-0 w-screen h-screen" data-index="1">
-                        <img src="./img/gabbys-dollhouse-the-movie-gallery-2b.jpg" alt="Gallery Image 2" class="w-full h-full object-cover">
+                        <img src="./img/gabbys-dollhouse-the-movie-gallery-2b.jpg" alt="Gallery Image 2"
+                            class="w-full h-full object-cover">
                     </div>
-                    
+
                     <!-- SLIDE 3 -->
                     <div class="gallery-slide flex-shrink-0 w-screen h-screen" data-index="2">
-                        <img src="./img/gabbys-dollhouse-the-movie-gallery-3.jpg" alt="Gallery Image 3" class="w-full h-full object-cover">
+                        <img src="./img/gabbys-dollhouse-the-movie-gallery-3.jpg" alt="Gallery Image 3"
+                            class="w-full h-full object-cover">
                     </div>
-                    
+
                     <!-- SLIDE 4 -->
                     <div class="gallery-slide flex-shrink-0 w-screen h-screen" data-index="3">
-                        <img src="./img/gabbys-dollhouse-the-movie-gallery-4.jpg" alt="Gallery Image 4" class="w-full h-full object-cover">
+                        <img src="./img/gabbys-dollhouse-the-movie-gallery-4.jpg" alt="Gallery Image 4"
+                            class="w-full h-full object-cover">
                     </div>
-                    
+
                     <!-- SLIDE 5 -->
                     <div class="gallery-slide flex-shrink-0 w-screen h-screen" data-index="4">
-                        <img src="./img/gabbys-dollhouse-the-movie-gallery-5.jpg" alt="Gallery Image 5" class="w-full h-full object-cover">
+                        <img src="./img/gabbys-dollhouse-the-movie-gallery-5.jpg" alt="Gallery Image 5"
+                            class="w-full h-full object-cover">
                     </div>
-                    
+
                     <!-- Clone of SLIDE 1 (for infinite loop - shows on RIGHT at end) -->
                     <div class="gallery-slide flex-shrink-0 w-screen h-screen" data-clone="true">
-                        <img src="./img/gabbys-dollhouse-the-movie-gallery-1.jpg" alt="Gallery Image 1 Clone" class="w-full h-full object-cover">
+                        <img src="./img/gabbys-dollhouse-the-movie-gallery-1.jpg" alt="Gallery Image 1 Clone"
+                            class="w-full h-full object-cover">
                     </div>
-                    
+
                 </div>
             </div>
-            
+
             <!-- Gallery Title - Top Left -->
-            <h2 class="absolute top-[20px] left-20 text-[#ffeea6] text-[25px] font-['Paytone_One'] uppercase z-10 m-0 pointer-events-none" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
+            <h2 class="absolute top-[20px] left-20 text-[#ffeea6] text-[25px] font-['Paytone_One'] uppercase z-10 m-0 pointer-events-none"
+                style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
                 Gallery
             </h2>
-            
+
             <!-- Navigation Arrows - Bottom Right Corner -->
             <!-- Previous Button (Left Arrow) -->
-            <button id="prevButton" class="gallery-nav-button absolute right-[212px] bottom-14 z-20 w-9 h-9 flex items-center justify-center transition-all duration-300 cursor-pointer" type="button" aria-label="Previous">
+            <button id="prevButton"
+                class="gallery-nav-button absolute right-[212px] bottom-14 z-20 w-9 h-9 flex items-center justify-center transition-all duration-300 cursor-pointer"
+                type="button" aria-label="Previous">
                 <svg class="w-9 h-9 opacity-80" viewBox="0 0 100 100" fill="white">
                     <path d="M72 100 l5.26-5.26 l-44-44.65 l44-44.65 l-5.26-5.26 l-49.335 49.92 z"></path>
                 </svg>
             </button>
-            
+
             <!-- Next Button (Right Arrow) -->
-            <button id="nextButton" class="gallery-nav-button absolute right-[156px] bottom-14 z-20 w-9 h-9 flex items-center justify-center transition-all duration-300 cursor-pointer" type="button" aria-label="Next">
+            <button id="nextButton"
+                class="gallery-nav-button absolute right-[156px] bottom-14 z-20 w-9 h-9 flex items-center justify-center transition-all duration-300 cursor-pointer"
+                type="button" aria-label="Next">
                 <svg class="w-9 h-9 opacity-80" viewBox="0 0 100 100" fill="white">
                     <path d="M28 100 l-5.26-5.26 l44-44.65 l-44-44.65 l5.26-5.26 l49.335 49.92 z"></path>
                 </svg>
@@ -792,56 +940,79 @@
 
         <section class="shop relative w-full h-screen flex justify-center items-start bg-white m-0 p-0">
             <div class="left-content w-1/2 flex items-start justify-end">
-                <div class="detail-closed w-[720px] text-[15px] leading-normal text-white font-['TT_Norms_W01_Regular',_Helvetica,_sans-serif] py-[15px] pr-[20px] pb-[60px] pl-[50px]">
+                <div
+                    class="detail-closed w-[720px] text-[15px] leading-normal text-white font-['TT_Norms_W01_Regular',_Helvetica,_sans-serif] py-[15px] pr-[20px] pb-[60px] pl-[50px]">
                     <div class="text pb-[20px]">
                         <h2 class="text-[25px] font-['Paytone_One'] uppercase text-[#ed34ac] pb-[10px]">Shop</h2>
-                        <p class="text-[15px] font-['Quicksand'] leading-normal text-[#ed34ac]">Live out your favorite adventures from the movie with all new toys, books, apparel, and more - available now at your favorite retailer!</p>
+                        <p class="text-[15px] font-['Quicksand'] leading-normal text-[#ed34ac]">Live out your favorite
+                            adventures from the movie with all new toys, books, apparel, and more - available now at
+                            your favorite retailer!</p>
                     </div>
                     <div class="three-box">
                         <ul class="grid grid-cols-2 gap-x-[20px] gap-y-[30px] list-none p-0 w-[430px]">
                             <li class="flex flex-col items-center justify-between w-[200px] h-[180px]">
-                                <img src="./img/gabbys-dollhouse-the-movie-shop-walmart2.png" alt="Walmart" class="w-[200px] h-[120px] object-contain">
-                                <button class="shop-button text-[#ed34ac] border-2 border-[#ed34ac] bg-transparent py-[13.5px] px-[15px] mt-5 w-[200px] text-[12px] font-['Poppins'] font-bold tracking-[0.05em] cursor-pointer uppercase flex items-center justify-center">Shop Now</button>
+                                <img src="./img/gabbys-dollhouse-the-movie-shop-walmart2.png" alt="Walmart"
+                                    class="w-[200px] h-[120px] object-contain">
+                                <button
+                                    class="shop-button text-[#ed34ac] border-2 border-[#ed34ac] bg-transparent py-[13.5px] px-[15px] mt-5 w-[200px] text-[12px] font-['Poppins'] font-bold tracking-[0.05em] cursor-pointer uppercase flex items-center justify-center">Shop
+                                    Now</button>
                             </li>
                             <li class="flex flex-col items-center justify-between w-[200px] h-[180px]">
-                                <img src="./img/gabbys-dollhouse-the-movie-shop-amazon2.png" alt="Amazon" class="w-[200px] h-[120px] object-contain">
-                                <button class="shop-button text-[#ed34ac] border-2 border-[#ed34ac] bg-transparent py-[13.5px] px-[15px] mt-5 w-[200px] text-[12px] font-['Poppins'] font-bold tracking-[0.05em] cursor-pointer uppercase flex items-center justify-center">Shop Now</button>
+                                <img src="./img/gabbys-dollhouse-the-movie-shop-amazon2.png" alt="Amazon"
+                                    class="w-[200px] h-[120px] object-contain">
+                                <button
+                                    class="shop-button text-[#ed34ac] border-2 border-[#ed34ac] bg-transparent py-[13.5px] px-[15px] mt-5 w-[200px] text-[12px] font-['Poppins'] font-bold tracking-[0.05em] cursor-pointer uppercase flex items-center justify-center">Shop
+                                    Now</button>
                             </li>
                             <li class="flex flex-col items-center justify-between w-[200px] h-[180px]">
-                                <img src="./img/gabbys-dollhouse-the-movie-shop-target2.png" alt="Target" class="w-[200px] h-[120px] object-contain">
-                                <button class="shop-button text-[#ed34ac] border-2 border-[#ed34ac] bg-transparent py-[13.5px] px-[15px] w-[200px] text-[12px] font-['Poppins'] font-bold tracking-[0.05em] cursor-pointer uppercase flex items-center justify-center">Shop Now</button>
+                                <img src="./img/gabbys-dollhouse-the-movie-shop-target2.png" alt="Target"
+                                    class="w-[200px] h-[120px] object-contain">
+                                <button
+                                    class="shop-button text-[#ed34ac] border-2 border-[#ed34ac] bg-transparent py-[13.5px] px-[15px] w-[200px] text-[12px] font-['Poppins'] font-bold tracking-[0.05em] cursor-pointer uppercase flex items-center justify-center">Shop
+                                    Now</button>
                             </li>
                             <li class="flex flex-col items-center justify-between w-[200px] h-[180px]">
-                                
+
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="right-content w-1/2 h-full">
-                <img src="./img/gabbys-dollhouse-the-movie-shop-desktop.jpg" alt="Gabby's Dollhouse: The Movie about" class="w-full h-full object-cover">
+                <img src="./img/gabbys-dollhouse-the-movie-shop-desktop.jpg" alt="Gabby's Dollhouse: The Movie about"
+                    class="w-full h-full object-cover">
             </div>
         </section>
 
 
-        <section class="pretty-glitter-kitty-litter relative w-full h-screen flex justify-center items-start bg-white m-0 p-0">
+        <section
+            class="pretty-glitter-kitty-litter relative w-full h-screen flex justify-center items-start bg-white m-0 p-0">
             <div class="left-content w-1/2 h-full">
-                <img src="./img/gabbys-dollhouse-the-movie-pretty-glitter-kitty-litter-desktop.jpg" alt="Gabby's Dollhouse: The Movie about" class="w-full h-full object-cover">
+                <img src="./img/gabbys-dollhouse-the-movie-pretty-glitter-kitty-litter-desktop.jpg"
+                    alt="Gabby's Dollhouse: The Movie about" class="w-full h-full object-cover">
             </div>
             <div class="right-content w-1/2 flex items-start justify-start pl-[40px]">
-                <div class="detail-closed w-[720px] text-[15px] leading-normal text-white font-['TT_Norms_W01_Regular',_Helvetica,_sans-serif] py-[15px] pb-[60px]">
+                <div
+                    class="detail-closed w-[720px] text-[15px] leading-normal text-white font-['TT_Norms_W01_Regular',_Helvetica,_sans-serif] py-[15px] pb-[60px]">
                     <div class="text pb-[20px]">
-                        <h2 class="text-[27px] font-['Paytone_One'] uppercase text-[#a02655] pb-[10px] tracking-[0.05em]">Pretty Glitter Kitty Litter</h2>
+                        <h2
+                            class="text-[27px] font-['Paytone_One'] uppercase text-[#a02655] pb-[10px] tracking-[0.05em]">
+                            Pretty Glitter Kitty Litter</h2>
                     </div>
                     <div class="image-container grid grid-cols-2 w-[655px] h-auto gap-x-[25px] mb-[20px]">
                         <div class="large-image w-full">
-                            <img src="./img/gabbys-dollhouse-the-movie-pretty-glitter-kitty-litter-thumbnail1.png" alt="Pretty Glitter Kitty Litter" class="w-full h-full object-cover">
+                            <img src="./img/gabbys-dollhouse-the-movie-pretty-glitter-kitty-litter-thumbnail1.png"
+                                alt="Pretty Glitter Kitty Litter" class="w-full h-full object-cover">
                         </div>
                         <div class="small-img grid grid-cols-2 w-full gap-[25px] ">
-                            <img src="./img/gabbys-dollhouse-the-movie-pretty-glitter-kitty-litter-thumbnail2.png" alt="Pretty Glitter Kitty Litter">
-                            <img src="./img/gabbys-dollhouse-the-movie-pretty-glitter-kitty-litter-thumbnail3.png" alt="Pretty Glitter Kitty Litter">
-                            <img src="./img/gabbys-dollhouse-the-movie-pretty-glitter-kitty-litter-thumbnail4.png" alt="Pretty Glitter Kitty Litter">
-                            <img src="./img/gabbys-dollhouse-the-movie-pretty-glitter-kitty-litter-thumbnail5.png" alt="Pretty Glitter Kitty Litter">
+                            <img src="./img/gabbys-dollhouse-the-movie-pretty-glitter-kitty-litter-thumbnail2.png"
+                                alt="Pretty Glitter Kitty Litter">
+                            <img src="./img/gabbys-dollhouse-the-movie-pretty-glitter-kitty-litter-thumbnail3.png"
+                                alt="Pretty Glitter Kitty Litter">
+                            <img src="./img/gabbys-dollhouse-the-movie-pretty-glitter-kitty-litter-thumbnail4.png"
+                                alt="Pretty Glitter Kitty Litter">
+                            <img src="./img/gabbys-dollhouse-the-movie-pretty-glitter-kitty-litter-thumbnail5.png"
+                                alt="Pretty Glitter Kitty Litter">
                         </div>
                     </div>
                     <div class="bottom-container flex items-start justify-between w-[655px] h-auto gap-[30px]">
@@ -856,7 +1027,8 @@
                                     <span class="text-[#04acaa] text-[24px] font-bold leading-none pt-[8px]">$</span>
                                     <span class="text-[#04acaa] text-[58px] font-bold leading-none">27</span>
                                     <span class="text-[#04acaa] text-[28px] font-bold leading-none pt-[5px]">.00</span>
-                                    <span class="absolute top-1/2 left-0 w-full h-[5px] bg-[#04acaa] transform -rotate-0"></span>
+                                    <span
+                                        class="absolute top-1/2 left-0 w-full h-[5px] bg-[#04acaa] transform -rotate-0"></span>
                                 </div>
                             </div>
                             <div class="shipping-text font-['Outfit'] font-thin text-[#04acaa] tracking-[0.05em]">
@@ -864,7 +1036,9 @@
                                     +$9.26 Shipping & Handling
                                 </p>
                             </div>
-                            <button class="font-['Paytone_One'] text-[20px] font-bold leading-none text-[#9F2655] uppercase border-2 border-[#9F2655] w-[180px] h-[52px] px-[30px] py-[13px] my-[20px] cursor-not-allowed tracking-[0.05em]">Sold Out</button>
+                            <button
+                                class="font-['Paytone_One'] text-[20px] font-bold leading-none text-[#9F2655] uppercase border-2 border-[#9F2655] w-[180px] h-[52px] px-[30px] py-[13px] my-[20px] cursor-not-allowed tracking-[0.05em]">Sold
+                                Out</button>
                             <div class="review-star flex gap-2 items-center h-[29px] mb-[17px]">
                                 <p class="font-['Roboto'] font-thin text-[#9F2655] text-[19px] leading-none">5.0</p>
                                 <div class="star flex">
@@ -876,21 +1050,38 @@
                                 </div>
                             </div>
                             <div class="review-text">
-                                <p class="font-['Nunito'] text-[#9F2655] text-[15px] leading-[22px] font-black tracking-[0.05em]">"<span>💩</span> Everything turned to sparkles! The smell is 100% pretty."</p>
+                                <p
+                                    class="font-['Nunito'] text-[#9F2655] text-[15px] leading-[22px] font-black tracking-[0.05em]">
+                                    "<span>💩</span> Everything turned to sparkles! The smell is 100% pretty."</p>
                             </div>
                         </div>
                         <div class="left-content w-1/2">
-                            <h2 class="font-['Montserrat'] text-[#9F2655] text-[16px] font-thin leading-none uppercase mb-[3px] tracking-[0.05em]">It's The Littler That Glitters!</h2>
-                            <p class="font-['Source_Sans_Pro'] text-[#9F2655] text-[15px] leading-[22px] font-normal tracking-[0.01em] mb-[10px]">Does a messy litter give you the jitters? This isn't just for people with cats. You can put it in decorative bowls, fill a piñata with it, hide your jewelry in it. You can also use this on top of your popcorn... just kidding... don't eat it. WARNING: not edible.</p>
-                            <blockquote class="font-['Montserrat'] text-[#9F2655] text-[14px] leading-[18px] font-thin tracking-[0.05em] mb-[13px]">"I just can't get enough of this litter!" <br><span class="inline-block mt-[5px]">- Peter Spielberg</span></blockquote>
-                            <p class="font-['Raleway'] text-[#9F2655] text-[14px] leading-[18px] tracking-[0.1em] mb-[20px] uppercase opacity-70" style="font-weight: 100;">30-Day Money Back Guarantee</p>
+                            <h2
+                                class="font-['Montserrat'] text-[#9F2655] text-[16px] font-thin leading-none uppercase mb-[3px] tracking-[0.05em]">
+                                It's The Littler That Glitters!</h2>
+                            <p
+                                class="font-['Source_Sans_Pro'] text-[#9F2655] text-[15px] leading-[22px] font-normal tracking-[0.01em] mb-[10px]">
+                                Does a messy litter give you the jitters? This isn't just for people with cats. You can
+                                put it in decorative bowls, fill a piñata with it, hide your jewelry in it. You can also
+                                use this on top of your popcorn... just kidding... don't eat it. WARNING: not edible.
+                            </p>
+                            <blockquote
+                                class="font-['Montserrat'] text-[#9F2655] text-[14px] leading-[18px] font-thin tracking-[0.05em] mb-[13px]">
+                                "I just can't get enough of this litter!" <br><span class="inline-block mt-[5px]">-
+                                    Peter Spielberg</span></blockquote>
+                            <p class="font-['Raleway'] text-[#9F2655] text-[14px] leading-[18px] tracking-[0.1em] mb-[20px] uppercase opacity-70"
+                                style="font-weight: 100;">30-Day Money Back Guarantee</p>
                             <div class="as-seen-on flex flex-col items-center mb-[13px] h-[94px]">
-                                <p class="font-['Raleway'] text-[#9F2655] text-[14px] tracking-[0.1em] opacity-70" style="font-weight: 100;">As seen on</p>
+                                <p class="font-['Raleway'] text-[#9F2655] text-[14px] tracking-[0.1em] opacity-70"
+                                    style="font-weight: 100;">As seen on</p>
                                 <div class="as-seen-on-link flex items-center gap-[10px]">
-                                    <a href="https://www.youtube.com/watch?v=iqyvMtdWRpU" target="_blank" aria-label="YouTube" class="flex items-center justify-center w-[67px] h-[67px]">
+                                    <a href="https://www.youtube.com/watch?v=iqyvMtdWRpU" target="_blank"
+                                        aria-label="YouTube" class="flex items-center justify-center w-[67px] h-[67px]">
                                         <img src="./img/youtube-color-icon.png" alt="youtube">
                                     </a>
-                                    <a href="https://www.tiktok.com/@dreamworks/video/7548892957286337806" target="_blank" aria-label="TikTok" class="flex items-center justify-center w-[67px] h-[67px]">
+                                    <a href="https://www.tiktok.com/@dreamworks/video/7548892957286337806"
+                                        target="_blank" aria-label="TikTok"
+                                        class="flex items-center justify-center w-[67px] h-[67px]">
                                         <img src="./img/tiktok-square-icon.png" alt="tiktok">
                                     </a>
                                 </div>
@@ -899,59 +1090,75 @@
                     </div>
                 </div>
             </div>
-            
+
         </section>
 
         <section class="music relative w-full h-screen flex justify-center items-center bg-[#e8a3c6] m-0 p-0">
-            <section class="music-section relative w-full h-full flex flex-row m-0 p-0">
+            <div class="music-section relative w-full h-full flex flex-row m-0 p-0">
 
-                <div class="left-content w-1/2 h-full bg-gradient-to-b from-[#f72399] to-[#f02ea6] flex items-center justify-end relative">
+                <div
+                    class="left-content w-1/2 h-full bg-gradient-to-b from-[#f72399] to-[#f02ea6] flex items-center justify-end relative">
                     <div class="absolute top-[70px] w-[720px] right-[20px]">
-                        <h2 class="font-['Futura'] text-[rgb(255,239,166)] text-[25px] font-bold leading-normal uppercase pl-[50px]">Music</h2>
+                        <h2
+                            class="font-['Futura'] text-[rgb(255,239,166)] text-[25px] font-bold leading-normal uppercase pl-[50px]">
+                            Music</h2>
                     </div>
-                    <div class="detail-closed w-[720px] text-[15px] leading-normal text-white font-['TT_Norms_W01_Regular',_Helvetica,_sans-serif] py-[40px] pr-[20px] pb-[60px] pl-[50px]">
+                    <div
+                        class="detail-closed w-[720px] text-[15px] leading-normal text-white font-['TT_Norms_W01_Regular',_Helvetica,_sans-serif] py-[40px] pr-[20px] pb-[60px] pl-[50px]">
                         <div class="music-contianer">
-                            <h1 class="font-black uppercase text-[27px] leading-[1.2] tracking-[0.05em] mb-[10px]" style="font-family: 'Avenir Next Rounded', 'Montserrat', 'Arial Rounded MT Bold', 'Helvetica Rounded', system-ui, sans-serif;">
+                            <h1 class="font-black uppercase text-[27px] leading-[1.2] tracking-[0.05em] mb-[10px]"
+                                style="font-family: 'Avenir Next Rounded', 'Montserrat', 'Arial Rounded MT Bold', 'Helvetica Rounded', system-ui, sans-serif;">
                                 GABBY'S DOLLHOUSE: THE MOVIE - SOUNDTRACK
                             </h1>
-                            <p class="font-normal tracking-[0.05em] text-white text-[15px]" style="font-family: 'Avenir Next', 'Avenir', 'Helvetica Neue', 'Segoe UI', 'Arial', sans-serif;">
+                            <p class="font-normal tracking-[0.05em] text-white text-[15px]"
+                                style="font-family: 'Avenir Next', 'Avenir', 'Helvetica Neue', 'Segoe UI', 'Arial', sans-serif;">
                                 Available on Apple Music, iTunes, and Spotify!
                             </p>
-                            <button class="music-button text-white border border-white bg-transparent py-[10px] px-[15px] mt-[30px] w-[180px] text-[12px] font-['Poppins'] font-bold tracking-[0.05em] cursor-pointer uppercase flex items-center justify-center">Listen Here</button>
+                            <button
+                                class="music-button text-white border border-white bg-transparent py-[10px] px-[15px] mt-[30px] w-[180px] text-[12px] font-['Poppins'] font-bold tracking-[0.05em] cursor-pointer uppercase flex items-center justify-center">Listen
+                                Here</button>
                         </div>
                     </div>
                 </div>
-                
-    
+
+
                 <div class="right-content w-1/2">
-                    <img src="./img/gabbys-dollhouse-the-movie-music-desktop.jpg" alt="Gabby's Dollhouse: The Movie about" class="w-full h-full object-cover">
+                    <img src="./img/gabbys-dollhouse-the-movie-music-desktop.jpg"
+                        alt="Gabby's Dollhouse: The Movie about" class="w-full h-full object-cover">
                 </div>
-            </section>
+            </div>
         </section>
 
-        <section class="poster relative w-full h-screen flex items-center justify-center m-0 p-0" style="background: radial-gradient(circle 700px at center top, #20fbfb 0%, #039c9c 70%, #039c9c 100%);">
+        <section class="poster relative w-full h-screen flex items-center justify-center m-0 p-0"
+            style="background: radial-gradient(circle 700px at center top, #20fbfb 0%, #039c9c 70%, #039c9c 100%);">
             <div class="absolute top-[50px] left-0 right-0 flex justify-center">
                 <div class="w-full max-w-[1440px] pl-[60px]">
-                    <h1 class="font-['Futura'] text-[rgb(255,239,166)] text-[25px] font-bold leading-normal uppercase">Poster</h1>
+                    <h1 class="font-['Futura'] text-[rgb(255,239,166)] text-[25px] font-bold leading-normal uppercase">
+                        Poster</h1>
                 </div>
             </div>
             <div class="poster w-[400px] relative group cursor-pointer">
-                <img src="./img/gabbys-dollhouse-the-movie-poster.jpg" alt="Gabby's Dollhouse: The Movie poster" class="w-full h-auto object-cover transition-all duration-300">
-                
+                <img src="./img/gabbys-dollhouse-the-movie-poster.jpg" alt="Gabby's Dollhouse: The Movie poster"
+                    class="w-full h-auto object-cover transition-all duration-300">
+
                 <!-- Dark overlay on hover -->
-                <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
-                
+                <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-300">
+                </div>
+
                 <!-- Search icon in the middle -->
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                <div
+                    class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                 </div>
             </div>
         </section>
 
         <section class="stay-in-touch w-full flex justify-center items-center bg-white m-0 p-0">
-            
+
             <!-- section & img -->
             <div class="section-contact">
                 <div class="contact-form">
@@ -985,7 +1192,7 @@
                     <img src="./img/contact-img.jpg" alt="Contact illustration" />
                 </div>
             </div>
- 
+
         </section>
 
         <section class="footer relative w-full flex justify-center items-center bg-[#e8a3c6] m-0 p-0">
@@ -1087,12 +1294,15 @@
 
     <div id="video-modal" class="fixed inset-0 bg-black bg-opacity-95 z-[9999] hidden items-center justify-center">
         <div class="relative w-full h-full flex items-center justify-center p-4">
-            <button id="close-modal" class="absolute top-4 right-4 text-white text-6xl font-bold hover:text-gray-300 transition-colors z-10">
+            <button id="close-modal"
+                class="absolute top-4 right-4 text-white text-6xl font-bold hover:text-gray-300 transition-colors z-10">
                 ×
             </button>
-            
+
             <div class="relative w-[98%] h-[96%]">
-                <iframe id="video-iframe" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="video-iframe" class="w-full h-full" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -1108,7 +1318,7 @@
         scrollContainer.addEventListener('scroll', () => {
             const scrollPosition = scrollContainer.scrollTop;
             const windowHeight = window.innerHeight;
-            
+
             // If scrolled past first section, slide nav up
             if (scrollPosition > windowHeight * 0.5) {
                 mainNav.classList.add('slide-up');
@@ -1117,15 +1327,17 @@
             }
 
             // Update active dot based on scroll position
+            // Only consider the first 9 sections (those with dots)
             let currentSection = 0;
-            sections.forEach((section, index) => {
-                const sectionTop = section.offsetTop;
+            const totalDots = dots.length; // Should be 9
+            for (let i = 0; i < totalDots && i < sections.length; i++) {
+                const sectionTop = sections[i].offsetTop;
                 if (scrollPosition >= sectionTop - windowHeight / 2) {
-                    currentSection = index;
+                    currentSection = i;
                 }
-            });
+            }
 
-            // Update dots
+            // Update dots - highlight the currently active section
             dots.forEach((dot, index) => {
                 if (index === currentSection) {
                     dot.classList.add('active');
@@ -1138,7 +1350,10 @@
         // Click on dots to navigate to sections
         dotItems.forEach((item, index) => {
             item.addEventListener('click', () => {
-                sections[index].scrollIntoView({ behavior: 'smooth' });
+                // Make sure we don't go beyond available sections
+                if (index < sections.length) {
+                    sections[index].scrollIntoView({ behavior: 'smooth' });
+                }
             });
         });
 
@@ -1151,19 +1366,19 @@
             item.addEventListener('click', () => {
                 // Remove active class from all items
                 videoItems.forEach(video => video.classList.remove('active'));
-                
+
                 // Add active class to clicked item
                 item.classList.add('active');
-                
+
                 // Get the thumbnail path and video ID from data attributes
                 const thumbPath = item.getAttribute('data-video-thumb');
                 const videoId = item.getAttribute('data-video-id');
-                
+
                 // Update the video player background
                 if (videoPlayerBg && thumbPath) {
                     videoPlayerBg.src = thumbPath;
                 }
-                
+
                 // Update the main play button's video ID
                 if (mainPlayBtn && videoId) {
                     mainPlayBtn.setAttribute('data-video-id', videoId);
@@ -1241,24 +1456,24 @@
                 console.error('Gallery slider element not found!');
                 return;
             }
-            
+
             console.log('Updating slider to slide:', currentSlide);
-            
+
             if (noTransition) {
                 gallerySlider.style.transition = 'none';
             } else {
                 gallerySlider.style.transition = 'transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
             }
-            
+
             // Each slide is full screen width
             const slideWidth = window.innerWidth;
-            
+
             // Calculate offset: how many pixels to move left
             const offset = currentSlide * slideWidth;
-            
+
             console.log('Applying transform:', `translateX(-${offset}px)`);
             gallerySlider.style.transform = `translateX(-${offset}px)`;
-            
+
             // Force reflow to apply no-transition immediately
             if (noTransition) {
                 gallerySlider.offsetHeight;
@@ -1269,7 +1484,7 @@
             console.log('Going to previous slide, current:', currentSlide);
             currentSlide--;
             updateGallerySlider();
-            
+
             // If we're at the first clone (index 0), jump to the real last slide (index 5)
             if (currentSlide === 0) {
                 setTimeout(() => {
@@ -1283,7 +1498,7 @@
             console.log('Going to next slide, current:', currentSlide);
             currentSlide++;
             updateGallerySlider();
-            
+
             // If we're at the last clone (index 6), jump to the real first slide (index 1)
             if (currentSlide === 6) {
                 setTimeout(() => {
@@ -1297,7 +1512,7 @@
         function isGalleryVisible() {
             if (!gallerySection) return false;
             const rect = gallerySection.getBoundingClientRect();
-            
+
             // Check if gallery section is taking up most of the viewport
             // More strict check to ensure gallery is the active section
             const isVisible = rect.top <= 100 && rect.bottom >= window.innerHeight - 100;
@@ -1338,29 +1553,29 @@
         // Combined keyboard handler for all keyboard events
         document.addEventListener('keydown', (e) => {
             console.log('Key pressed:', e.key);
-            
+
             // Handle ESC key for video modal
             if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
                 closeVideoModal();
                 return;
             }
-            
+
             // Handle arrow keys for gallery navigation
             // Check if gallery is visible
             const isVisible = isGalleryVisible();
             console.log('Gallery visible for keyboard:', isVisible);
-            
+
             if (isVisible) {
-            if (e.key === 'ArrowLeft') {
-                console.log('Left arrow pressed, going to prev slide');
-                e.preventDefault(); // Prevent page scroll
+                if (e.key === 'ArrowLeft') {
+                    console.log('Left arrow pressed, going to prev slide');
+                    e.preventDefault(); // Prevent page scroll
                     e.stopPropagation(); // Stop event from bubbling
-                goToPrevSlide();
-            } else if (e.key === 'ArrowRight') {
-                console.log('Right arrow pressed, going to next slide');
-                e.preventDefault(); // Prevent page scroll
+                    goToPrevSlide();
+                } else if (e.key === 'ArrowRight') {
+                    console.log('Right arrow pressed, going to next slide');
+                    e.preventDefault(); // Prevent page scroll
                     e.stopPropagation(); // Stop event from bubbling
-                goToNextSlide();
+                    goToNextSlide();
                 }
             }
         });
@@ -1369,7 +1584,7 @@
         window.addEventListener('load', () => {
             updateGallerySlider(true);
         });
-        
+
         // Recalculate on window resize
         window.addEventListener('resize', () => {
             updateGallerySlider(true);
@@ -1381,4 +1596,5 @@
         }, 100);
     </script>
 </body>
+
 </html>
