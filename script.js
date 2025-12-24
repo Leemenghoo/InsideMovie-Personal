@@ -1,286 +1,272 @@
 const scrollContainer = document.getElementById('mainContainer');
-        const mainNav = document.getElementById('mainNav');
-        const sections = document.querySelectorAll('section');
-        const dotItems = document.querySelectorAll('.dot-item');
-        const dots = document.querySelectorAll('.dot');
+const mainNav = document.getElementById('mainNav');
+const sections = document.querySelectorAll('section');
+const dotItems = document.querySelectorAll('.dot-item');
+const dots = document.querySelectorAll('.dot');
 
-        // Detect scroll and slide nav up/down
-        scrollContainer.addEventListener('scroll', () => {
-            const scrollPosition = scrollContainer.scrollTop;
-            const windowHeight = window.innerHeight;
+// Detect scroll and slide nav up/down
+scrollContainer.addEventListener('scroll', () => {
+    const scrollPosition = scrollContainer.scrollTop;
+    const windowHeight = window.innerHeight;
 
-            // If scrolled past first section, slide nav up
-            if (scrollPosition > windowHeight * 0.5) {
-                mainNav.classList.add('slide-up');
-            } else {
-                mainNav.classList.remove('slide-up');
-            }
+    // If scrolled past first section, slide nav up
+    if (scrollPosition > windowHeight * 0.5) {
+        mainNav.classList.add('slide-up');
+    } else {
+        mainNav.classList.remove('slide-up');
+    }
 
-            // Update active dot based on scroll position
-            // Only consider the first 9 sections (those with dots)
-            let currentSection = 0;
-            const totalDots = dots.length; // Should be 9
-            for (let i = 0; i < totalDots && i < sections.length; i++) {
-                const sectionTop = sections[i].offsetTop;
-                if (scrollPosition >= sectionTop - windowHeight / 2) {
-                    currentSection = i;
-                }
-            }
+    // Update active dot based on scroll position
+    // Only consider the first 9 sections (those with dots)
+    let currentSection = 0;
+    const totalDots = dots.length; // Should be 9
+    for (let i = 0; i < totalDots && i < sections.length; i++) {
+        const sectionTop = sections[i].offsetTop;
+        if (scrollPosition >= sectionTop - windowHeight / 2) {
+            currentSection = i;
+        }
+    }
 
-            // Update dots - highlight the currently active section
-            dots.forEach((dot, index) => {
-                if (index === currentSection) {
-                    dot.classList.add('active');
-                } else {
-                    dot.classList.remove('active');
-                }
-            });
-        });
+    // Update dots - highlight the currently active section
+    dots.forEach((dot, index) => {
+        if (index === currentSection) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+});
 
-        // Click on dots to navigate to sections
-        dotItems.forEach((item, index) => {
-            item.addEventListener('click', () => {
-                // Make sure we don't go beyond available sections
-                if (index < sections.length) {
-                    sections[index].scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
+// Click on dots to navigate to sections
+dotItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        // Make sure we don't go beyond available sections
+        if (index < sections.length) {
+            sections[index].scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
 
-        // Video switching functionality
-        const videoItems = document.querySelectorAll('.video-item');
-        const videoPlayerBg = document.getElementById('video-player-bg');
-        const mainPlayBtn = document.getElementById('main-play-button');
+// Video switching functionality
+const videoItems = document.querySelectorAll('.video-item');
+const videoPlayerBg = document.getElementById('video-player-bg');
+const mainPlayBtn = document.getElementById('main-play-button');
 
-        videoItems.forEach(item => {
-            item.addEventListener('click', () => {
-                // Remove active class from all items
-                videoItems.forEach(video => video.classList.remove('active'));
+videoItems.forEach(item => {
+    item.addEventListener('click', () => {
+        // Remove active class from all items
+        videoItems.forEach(video => video.classList.remove('active'));
 
-                // Add active class to clicked item
-                item.classList.add('active');
+        // Add active class to clicked item
+        item.classList.add('active');
 
-                // Get the thumbnail path and video ID from data attributes
-                const thumbPath = item.getAttribute('data-video-thumb');
-                const videoId = item.getAttribute('data-video-id');
+        // Get the thumbnail path and video ID from data attributes
+        const thumbPath = item.getAttribute('data-video-thumb');
+        const videoId = item.getAttribute('data-video-id');
 
-                // Update the video player background
-                if (videoPlayerBg && thumbPath) {
-                    videoPlayerBg.src = thumbPath;
-                }
-
-                // Update the main play button's video ID
-                if (mainPlayBtn && videoId) {
-                    mainPlayBtn.setAttribute('data-video-id', videoId);
-                }
-            });
-        });
-
-        // Video Modal Functionality
-        const videoModal = document.getElementById('video-modal');
-        const videoIframe = document.getElementById('video-iframe');
-        const closeModal = document.getElementById('close-modal');
-        const mainPlayButton = document.getElementById('main-play-button');
-        const allVideoItems = document.querySelectorAll('.video-item');
-
-        // Function to open modal with video
-        function openVideoModal(videoId) {
-            const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-            videoIframe.src = embedUrl;
-            videoModal.classList.remove('hidden');
-            videoModal.classList.add('flex');
+        // Update the video player background
+        if (videoPlayerBg && thumbPath) {
+            videoPlayerBg.src = thumbPath;
         }
 
-        // Function to close modal
-        function closeVideoModal() {
-            videoIframe.src = '';
-            videoModal.classList.add('hidden');
-            videoModal.classList.remove('flex');
+        // Update the main play button's video ID
+        if (mainPlayBtn && videoId) {
+            mainPlayBtn.setAttribute('data-video-id', videoId);
         }
+    });
+});
 
-        // Main play button click
-        mainPlayButton.addEventListener('click', () => {
-            const videoId = mainPlayButton.getAttribute('data-video-id');
+// Video Modal Functionality
+const videoModal = document.getElementById('video-modal');
+const videoIframe = document.getElementById('video-iframe');
+const closeModal = document.getElementById('close-modal');
+const mainPlayButton = document.getElementById('main-play-button');
+const allVideoItems = document.querySelectorAll('.video-item');
+
+// Function to open modal with video
+function openVideoModal(videoId) {
+    const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    videoIframe.src = embedUrl;
+    videoModal.classList.remove('hidden');
+    videoModal.classList.add('flex');
+}
+
+// Function to close modal
+function closeVideoModal() {
+    videoIframe.src = '';
+    videoModal.classList.add('hidden');
+    videoModal.classList.remove('flex');
+}
+
+// Main play button click
+mainPlayButton.addEventListener('click', () => {
+    const videoId = mainPlayButton.getAttribute('data-video-id');
+    openVideoModal(videoId);
+});
+
+// Video items click
+allVideoItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const videoId = item.getAttribute('data-video-id');
+        if (videoId) {
             openVideoModal(videoId);
-        });
-
-        // Video items click
-        allVideoItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const videoId = item.getAttribute('data-video-id');
-                if (videoId) {
-                    openVideoModal(videoId);
-                }
-            });
-        });
-
-        // Close button click
-        closeModal.addEventListener('click', closeVideoModal);
-
-        // Click outside video to close
-        videoModal.addEventListener('click', (e) => {
-            if (e.target === videoModal) {
-                closeVideoModal();
-            }
-        });
-
-        // Gallery Slider
-        let currentSlide = 1; // Start at index 1 (after the clone)
-        const gallerySlider = document.getElementById('gallerySlider');
-        const gallerySlides = document.querySelectorAll('.gallery-slide');
-        const totalSlides = 5; // Only count real slides, not clones
-        const gallerySection = document.querySelector('.gallery-section');
-        const prevButton = document.getElementById('prevButton');
-        const nextButton = document.getElementById('nextButton');
-
-        console.log('Gallery Slider initialized:', {
-            gallerySlider: gallerySlider,
-            gallerySlides: gallerySlides.length,
-            gallerySection: gallerySection,
-            prevButton: prevButton,
-            nextButton: nextButton
-        });
-
-        function updateGallerySlider(noTransition = false) {
-            if (!gallerySlider) {
-                console.error('Gallery slider element not found!');
-                return;
-            }
-
-            console.log('Updating slider to slide:', currentSlide);
-
-            if (noTransition) {
-                gallerySlider.style.transition = 'none';
-            } else {
-                gallerySlider.style.transition = 'transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
-            }
-
-            // Each slide is full screen width
-            const slideWidth = window.innerWidth;
-
-            // Calculate offset: how many pixels to move left
-            const offset = currentSlide * slideWidth;
-
-            console.log('Applying transform:', `translateX(-${offset}px)`);
-            gallerySlider.style.transform = `translateX(-${offset}px)`;
-
-            // Force reflow to apply no-transition immediately
-            if (noTransition) {
-                gallerySlider.offsetHeight;
-            }
         }
+    });
+});
 
-        function goToPrevSlide() {
-            console.log('Going to previous slide, current:', currentSlide);
-            currentSlide--;
-            updateGallerySlider();
+// Close button click
+closeModal.addEventListener('click', closeVideoModal);
 
-            // If we're at the first clone (index 0), jump to the real last slide (index 5)
-            if (currentSlide === 0) {
-                setTimeout(() => {
-                    currentSlide = 5;
-                    updateGallerySlider(true);
-                }, 800); // Match animation duration
-            }
-        }
+// Click outside video to close
+videoModal.addEventListener('click', (e) => {
+    if (e.target === videoModal) {
+        closeVideoModal();
+    }
+});
 
-        function goToNextSlide() {
-            console.log('Going to next slide, current:', currentSlide);
-            currentSlide++;
-            updateGallerySlider();
+// Gallery Slider
+let currentSlide = 1; // Start at index 1 (after the clone)
+const gallerySlider = document.getElementById('gallerySlider');
+const gallerySlides = document.querySelectorAll('.gallery-slide');
+const totalSlides = 5; // Only count real slides, not clones
+const gallerySection = document.querySelector('.gallery-section');
+const prevButton = document.getElementById('prevButton');
+const nextButton = document.getElementById('nextButton');
 
-            // If we're at the last clone (index 6), jump to the real first slide (index 1)
-            if (currentSlide === 6) {
-                setTimeout(() => {
-                    currentSlide = 1;
-                    updateGallerySlider(true);
-                }, 800); // Match animation duration
-            }
-        }
+function updateGallerySlider(noTransition = false) {
+    if (!gallerySlider) {
+        console.error('Gallery slider element not found!');
+        return;
+    }
 
-        // Check if gallery section is in viewport
-        function isGalleryVisible() {
-            if (!gallerySection) return false;
-            const rect = gallerySection.getBoundingClientRect();
+    console.log('Updating slider to slide:', currentSlide);
 
-            // Check if gallery section is taking up most of the viewport
-            // More strict check to ensure gallery is the active section
-            const isVisible = rect.top <= 100 && rect.bottom >= window.innerHeight - 100;
-            console.log('Gallery visibility check:', {
-                top: rect.top,
-                bottom: rect.bottom,
-                windowHeight: window.innerHeight,
-                isVisible: isVisible
-            });
-            return isVisible;
-        }
+    if (noTransition) {
+        gallerySlider.style.transition = 'none';
+    } else {
+        gallerySlider.style.transition = 'transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
+    }
 
-        // Click handlers for navigation buttons
-        if (prevButton) {
-            console.log('Prev button found, adding click listener');
-            prevButton.addEventListener('click', (e) => {
-                console.log('Prev button clicked!');
-                e.preventDefault();
-                e.stopPropagation();
-                goToPrevSlide();
-            });
-        } else {
-            console.error('Prev button not found!');
-        }
+    // Each slide is full screen width
+    const slideWidth = window.innerWidth;
 
-        if (nextButton) {
-            console.log('Next button found, adding click listener');
-            nextButton.addEventListener('click', (e) => {
-                console.log('Next button clicked!');
-                e.preventDefault();
-                e.stopPropagation();
-                goToNextSlide();
-            });
-        } else {
-            console.error('Next button not found!');
-        }
+    // Calculate offset: how many pixels to move left
+    const offset = currentSlide * slideWidth;
 
-        // Combined keyboard handler for all keyboard events
-        document.addEventListener('keydown', (e) => {
-            console.log('Key pressed:', e.key);
+    console.log('Applying transform:', `translateX(-${offset}px)`);
+    gallerySlider.style.transform = `translateX(-${offset}px)`;
 
-            // Handle ESC key for video modal
-            if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
-                closeVideoModal();
-                return;
-            }
+    // Force reflow to apply no-transition immediately
+    if (noTransition) {
+        gallerySlider.offsetHeight;
+    }
+}
 
-            // Handle arrow keys for gallery navigation
-            // Check if gallery is visible
-            const isVisible = isGalleryVisible();
-            console.log('Gallery visible for keyboard:', isVisible);
+function goToPrevSlide() {
+    console.log('Going to previous slide, current:', currentSlide);
+    currentSlide--;
+    updateGallerySlider();
 
-            if (isVisible) {
-                if (e.key === 'ArrowLeft') {
-                    console.log('Left arrow pressed, going to prev slide');
-                    e.preventDefault(); // Prevent page scroll
-                    e.stopPropagation(); // Stop event from bubbling
-                    goToPrevSlide();
-                } else if (e.key === 'ArrowRight') {
-                    console.log('Right arrow pressed, going to next slide');
-                    e.preventDefault(); // Prevent page scroll
-                    e.stopPropagation(); // Stop event from bubbling
-                    goToNextSlide();
-                }
-            }
-        });
-
-        // Initialize - center first real slide (index 1) on load
-        window.addEventListener('load', () => {
-            updateGallerySlider(true);
-        });
-
-        // Recalculate on window resize
-        window.addEventListener('resize', () => {
-            updateGallerySlider(true);
-        });
-
-        // Initialize immediately
+    // If we're at the first clone (index 0), jump to the real last slide (index 5)
+    if (currentSlide === 0) {
         setTimeout(() => {
+            currentSlide = 5;
             updateGallerySlider(true);
-        }, 100);
+        }, 800); // Match animation duration
+    }
+}
+
+function goToNextSlide() {
+    console.log('Going to next slide, current:', currentSlide);
+    currentSlide++;
+    updateGallerySlider();
+
+    // If we're at the last clone (index 6), jump to the real first slide (index 1)
+    if (currentSlide === 6) {
+        setTimeout(() => {
+            currentSlide = 1;
+            updateGallerySlider(true);
+        }, 800); // Match animation duration
+    }
+}
+
+// Check if gallery section is in viewport
+function isGalleryVisible() {
+    if (!gallerySection) return false;
+    const rect = gallerySection.getBoundingClientRect();
+
+    // Check if gallery section is taking up most of the viewport
+    // More strict check to ensure gallery is the active section
+    const isVisible = rect.top <= 100 && rect.bottom >= window.innerHeight - 100;
+    return isVisible;
+}
+
+// Click handlers for navigation buttons
+if (prevButton) {
+    console.log('Prev button found, adding click listener');
+    prevButton.addEventListener('click', (e) => {
+        console.log('Prev button clicked!');
+        e.preventDefault();
+        e.stopPropagation();
+        goToPrevSlide();
+    });
+} else {
+    console.error('Prev button not found!');
+}
+
+if (nextButton) {
+    console.log('Next button found, adding click listener');
+    nextButton.addEventListener('click', (e) => {
+        console.log('Next button clicked!');
+        e.preventDefault();
+        e.stopPropagation();
+        goToNextSlide();
+    });
+} else {
+    console.error('Next button not found!');
+}
+
+// Combined keyboard handler for all keyboard events
+document.addEventListener('keydown', (e) => {
+    console.log('Key pressed:', e.key);
+
+    // Handle ESC key for video modal
+    if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
+        closeVideoModal();
+        return;
+    }
+
+    // Handle arrow keys for gallery navigation
+    // Check if gallery is visible
+    const isVisible = isGalleryVisible();
+    console.log('Gallery visible for keyboard:', isVisible);
+
+    if (isVisible) {
+        if (e.key === 'ArrowLeft') {
+            console.log('Left arrow pressed, going to prev slide');
+            e.preventDefault(); // Prevent page scroll
+            e.stopPropagation(); // Stop event from bubbling
+            goToPrevSlide();
+        } else if (e.key === 'ArrowRight') {
+            console.log('Right arrow pressed, going to next slide');
+            e.preventDefault(); // Prevent page scroll
+            e.stopPropagation(); // Stop event from bubbling
+            goToNextSlide();
+        }
+    }
+});
+
+// Initialize - center first real slide (index 1) on load
+window.addEventListener('load', () => {
+    updateGallerySlider(true);
+});
+
+// Recalculate on window resize
+window.addEventListener('resize', () => {
+    updateGallerySlider(true);
+});
+
+// Initialize immediately
+setTimeout(() => {
+    updateGallerySlider(true);
+}, 100);
