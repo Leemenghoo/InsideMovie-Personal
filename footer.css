@@ -1,0 +1,218 @@
+/* footer */
+.footer {
+    background: #052c6f;
+    color: white;
+    min-height: 364.92px;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  
+  .footer-content {
+    padding: 40px 10px 0px;
+    margin: 0px auto;
+  }
+  
+  .logo {
+    text-align: center;
+    margin-bottom: 30px;
+    height: 62px;
+  }
+  
+  .logo-circle {
+    width: 105px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .nav-menu {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    padding: 5px 15px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: opacity 0.3s;
+  }
+  
+  .nav-menu a:hover {
+    opacity: 0.7;
+  }
+  
+  .social-section {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .social-title {
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    padding-bottom: 6px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 3px 20px;
+  }
+  
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    /* background: rgba(255, 255, 255, 0.1); */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+    cursor: pointer;
+  }
+  
+  .social-icon:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .social-icon svg {
+    width: 40px;
+    height: 30px;
+    fill: white;
+  }
+  .fb-icon svg {
+    width: 37px;
+    height: 40px;
+  }
+  .x-icon {
+    width: 30px;
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 10px;
+    /* line-height: 1.6; */
+    /* background-color:yellow; */
+    height: 17.13px;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 2px;
+    font-size: 8px;
+    font-weight: 400px;
+  }
+  
+  .footer-links a {
+    color: white;
+    font-size: 8px;
+    text-decoration: none;
+    transition: opacity 0.3s;
+  }
+  
+  .footer-links a:hover {
+    opacity: 0.5;
+  }
+  
+  .language-selector {
+    display: flex;
+    gap: 5px;
+    /* background-color:blue; */
+  }
+  
+  .lang-btn {
+    width: 50px;
+    height: auto;
+    border-radius: 3px;
+    cursor: pointer;
+   }
+
+   /* Section Contact (Stay Intouch) */
+
+.section-contact {
+    height: 470px;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 80px 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-form {
+    width: 570px;
+    height: 350px;
+  }
+  .contact-form h2 {
+    height: 32px;
+    color: #052c6f;
+    font-size: 32px;
+    font-weight: 880;
+    letter-spacing: 1.7px;
+  }
+  
+  .contact-form p {
+    height: 32px;
+    color: #052c6f;
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 20px;
+    line-height: 1.3;
+  }
+  
+  .form-intouch h2 {
+    font-size: 11px;
+    font-weight: 500px;
+    color: #052c6f;
+    margin-top: 25px;
+  }
+  
+  .input-day-month-year {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+  }
+  .input-day-month-year .label {
+    color: #052c6f;
+    font-weight: 800;
+    font-size: 13px;
+  }
+  .input-day-month-year .day {
+    width: 195px;
+  }
+  .day input {
+    border-bottom: 1px solid #052c6f;
+    /* width: 140px; */
+    outline: none;
+    margin-right: 13px;
+    /* margin-left: 20px; */
+    width: 170px;
+  }
+  
+  /* Contact Buton(NEXT) */
+  
+  .contact-btn {
+    width: 190px;
+    padding: 10px 15px;
+    margin-top: 33px;
+    border: 1px solid rgba(5, 44, 111, 0.485);
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(5, 44, 111, 0.485);
+  }
+  .contact-img img {
+    max-width: 600px;
+  }
+  .contact-img {
+    margin-left: 90px;
+  }

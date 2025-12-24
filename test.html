@@ -19,6 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="footer.css">
     <style>
         * { 
             box-sizing: border-box; 
@@ -221,7 +222,68 @@
             color: white;
             border-color: #ed34ac;
         }
+        /* Action Buttons */
+        .action-button {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: color 0.3s ease;
+        }
         
+        .action-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+        
+        .action-button:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .action-button:hover {
+            color: #052c6e;
+        }
+
+        /* Music Buttons - Different hover effect */
+        .music-button {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: color 0.3s ease;
+        }
+        
+        .music-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+        
+        .music-button:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .music-button:hover {
+            color: #f12ea4;
+        }
+        
+
+
         /* Watch at Home Title */
         .watch-at-home-title {
             font-family: 'Rubik', 'Fredoka', sans-serif;
@@ -661,7 +723,7 @@
             </div>
         </section>
 
-        <section class="gallery relative w-full h-screen overflow-hidden">
+        <section class="gallery-section relative w-full h-screen overflow-hidden">
         
             <!-- Slider Viewport -->
             <div class="relative w-full h-full overflow-hidden">
@@ -841,35 +903,185 @@
         </section>
 
         <section class="music relative w-full h-screen flex justify-center items-center bg-[#e8a3c6] m-0 p-0">
-            <h1>music</h1>
+            <section class="music-section relative w-full h-full flex flex-row m-0 p-0">
+
+                <div class="left-content w-1/2 h-full bg-gradient-to-b from-[#f72399] to-[#f02ea6] flex items-center justify-end relative">
+                    <div class="absolute top-[70px] w-[720px] right-[20px]">
+                        <h2 class="font-['Futura'] text-[rgb(255,239,166)] text-[25px] font-bold leading-normal uppercase pl-[50px]">Music</h2>
+                    </div>
+                    <div class="detail-closed w-[720px] text-[15px] leading-normal text-white font-['TT_Norms_W01_Regular',_Helvetica,_sans-serif] py-[40px] pr-[20px] pb-[60px] pl-[50px]">
+                        <div class="music-contianer">
+                            <h1 class="font-black uppercase text-[27px] leading-[1.2] tracking-[0.05em] mb-[10px]" style="font-family: 'Avenir Next Rounded', 'Montserrat', 'Arial Rounded MT Bold', 'Helvetica Rounded', system-ui, sans-serif;">
+                                GABBY'S DOLLHOUSE: THE MOVIE - SOUNDTRACK
+                            </h1>
+                            <p class="font-normal tracking-[0.05em] text-white text-[15px]" style="font-family: 'Avenir Next', 'Avenir', 'Helvetica Neue', 'Segoe UI', 'Arial', sans-serif;">
+                                Available on Apple Music, iTunes, and Spotify!
+                            </p>
+                            <button class="music-button text-white border border-white bg-transparent py-[10px] px-[15px] mt-[30px] w-[180px] text-[12px] font-['Poppins'] font-bold tracking-[0.05em] cursor-pointer uppercase flex items-center justify-center">Listen Here</button>
+                        </div>
+                    </div>
+                </div>
+                
+    
+                <div class="right-content w-1/2">
+                    <img src="./img/gabbys-dollhouse-the-movie-music-desktop.jpg" alt="Gabby's Dollhouse: The Movie about" class="w-full h-full object-cover">
+                </div>
+            </section>
         </section>
 
-        <section class="poster relative w-full h-screen flex justify-center items-center bg-[#e8a3c6] m-0 p-0">
-            <h1>poster</h1>
+        <section class="poster relative w-full h-screen flex items-center justify-center m-0 p-0" style="background: radial-gradient(circle 700px at center top, #20fbfb 0%, #039c9c 70%, #039c9c 100%);">
+            <div class="absolute top-[50px] left-0 right-0 flex justify-center">
+                <div class="w-full max-w-[1440px] pl-[60px]">
+                    <h1 class="font-['Futura'] text-[rgb(255,239,166)] text-[25px] font-bold leading-normal uppercase">Poster</h1>
+                </div>
+            </div>
+            <div class="poster w-[400px] relative group cursor-pointer">
+                <img src="./img/gabbys-dollhouse-the-movie-poster.jpg" alt="Gabby's Dollhouse: The Movie poster" class="w-full h-auto object-cover transition-all duration-300">
+                
+                <!-- Dark overlay on hover -->
+                <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
+                
+                <!-- Search icon in the middle -->
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+            </div>
         </section>
 
-        <section class="activities relative w-full h-screen flex justify-center items-center bg-[#e8a3c6] m-0 p-0">
-            <h1>activities</h1>
+        <section class="stay-in-touch w-full flex justify-center items-center bg-white m-0 p-0">
+            
+            <!-- section & img -->
+            <div class="section-contact">
+                <div class="contact-form">
+                    <h2>STAY IN TOUCH</h2>
+                    <p>
+                        Register today for the DreamWorks Animation newsletter to receive
+                        <br />all the latest information about our upcoming films and
+                        projects.
+                    </p>
+                    <form class="form-intouch">
+                        <h2>ENTER BIRTH DATE</h2>
+                        <div class="input-day-month-year">
+                            <label class="day">
+                                <div class="label">MONTH</div>
+                                <input type="text" />
+                            </label>
+                            <label class="day">
+                                <div class="label">DAY</div>
+                                <input type="text" />
+                            </label>
+                            <label class="day">
+                                <div class="label">YEAR</div>
+                                <input type="text" />
+                            </label>
+                        </div>
+                        <!-- Button Form -->
+                        <button type="submit" class="contact-btn">NEXT</button>
+                    </form>
+                </div>
+                <div class="contact-img">
+                    <img src="./img/contact-img.jpg" alt="Contact illustration" />
+                </div>
+            </div>
+ 
         </section>
 
-        <section class="activity-kit relative w-full h-screen flex justify-center items-center bg-[#e8a3c6] m-0 p-0">
-            <h1>activity-kit</h1>
+        <section class="footer relative w-full flex justify-center items-center bg-[#e8a3c6] m-0 p-0">
+            <!-- footer -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="logo">
+                        <div class="logo-circle">
+                            <img src="/img/footer/image copy 7.png" alt="">
+                        </div>
+                    </div>
+
+                    <nav class="nav-menu">
+                        <a href="#home">HOME</a>
+                        <a href="#movies">MOVIES</a>
+                        <a href="#tv-shows">TV SHOWS</a>
+                        <a href="#about">ABOUT</a>
+                        <a href="#careers">CAREERS</a>
+                        <a href="#culture">CULTURE</a>
+                        <a href="#classics">CLASSICS</a>
+                    </nav>
+
+                    <div class="social-section">
+                        <div class="social-title">FOLLOW DREAMWORKS</div>
+                        <div class="social-icons">
+
+                            <!-- twitter-icon -->
+                            <div class="social-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                            </div>
+
+                            <!-- facebook-icon -->
+                            <div class="social-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" />
+                                </svg>
+                            </div>
+
+                            <!-- youtube-icon -->
+                            <div class="social-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                                </svg>
+                            </div>
+
+                            <!-- Instragram-icon -->
+                            <div class="social-icon">
+                                <img src="/img/footer/[CITYPNG.COM]HD White Outline Round Instagram Logo Icon PNG - 2000x2000.png"
+                                    alt="">
+                            </div>
+                            <!-- tiktok-icon -->
+                            <div class="social-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-bottom">
+                        <div class="footer-links">
+                            <span>&copy; 2025 DREAMWORKS ANIMATION ALL RIGHTS RESERVED.</span>
+                            <span>A DIVISION OF</span>
+                            <a href="#">NBCUNIVERSAL</a>
+                            <span>|</span>
+                            <a href="#">PRIVACY POLICY</a>
+                            <span>|</span>
+                            <a href="#">COOKIE NOTICE</a>
+                            <span>|</span>
+                            <a href="#">TERMS OF SERVICE</a>
+                            <span>|</span>
+                            <a href="#">DO NOT SELL OR SHARE MY PERSONAL INFORMATION</a>
+                            <span>|</span>
+                            <a href="#">YOUR US STATE PRIVACY RIGHTS</a>
+                            <span>|</span>
+                            <a href="#">GOOGLE PRIVACY POLICY</a>
+                        </div>
+                        <div class="language-selector">
+                            <div class="lang-btn">
+                                <img src="/img/footer/image copy 6.png" alt="">
+                            </div>
+                            <div class="lang-btn">
+                                <img src="/img/footer/image copy 5.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
         </section>
-
-        <section class="social relative w-full h-screen flex justify-center items-center bg-[#e8a3c6] m-0 p-0">
-            <h1>social</h1>
-        </section>
-
-        <section class="stay-in-touch relative w-full h-screen flex justify-center items-center bg-[#e8a3c6] m-0 p-0">
-            <h1>stay-in-touch</h1>
-        </section>
-
-        <section class="footer relative w-full h-screen flex justify-center items-center bg-[#e8a3c6] m-0 p-0">
-            <h1>footer</h1>
-        </section>
-
-
-
 
     </div>
 
@@ -1139,16 +1351,16 @@
             console.log('Gallery visible for keyboard:', isVisible);
             
             if (isVisible) {
-                if (e.key === 'ArrowLeft') {
-                    console.log('Left arrow pressed, going to prev slide');
-                    e.preventDefault(); // Prevent page scroll
+            if (e.key === 'ArrowLeft') {
+                console.log('Left arrow pressed, going to prev slide');
+                e.preventDefault(); // Prevent page scroll
                     e.stopPropagation(); // Stop event from bubbling
-                    goToPrevSlide();
-                } else if (e.key === 'ArrowRight') {
-                    console.log('Right arrow pressed, going to next slide');
-                    e.preventDefault(); // Prevent page scroll
+                goToPrevSlide();
+            } else if (e.key === 'ArrowRight') {
+                console.log('Right arrow pressed, going to next slide');
+                e.preventDefault(); // Prevent page scroll
                     e.stopPropagation(); // Stop event from bubbling
-                    goToNextSlide();
+                goToNextSlide();
                 }
             }
         });
